@@ -18,7 +18,11 @@ class Culture extends City {
         private double area;
         private int postalCode;
     }
-
+    class Schools extends Location{
+        private String schoolName;
+        private String schoolLevel;
+        private int schoolContact;
+    }
 
     public class SmartCity {
         public static void main(String[] args) {
