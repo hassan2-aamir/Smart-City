@@ -46,7 +46,6 @@
         private String closingTime;
     }
 
-
     public class SmartCity {
         public static void main(String[] args) {
 
