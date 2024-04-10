@@ -35,8 +35,15 @@
     class Hotels extends Location {
         private String hotelName;
         private int hotelContact;
-        private int hotelRating;
+        private double hotelRating;
         private String priceRange;
+    }
+    class Restaurants extends Location {
+        private String restaurantName;
+        private double restaurantRating;
+        private String foodType;
+        private String openingTime;
+        private String closingTime;
     }
 
 
