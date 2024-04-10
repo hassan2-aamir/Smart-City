@@ -28,6 +28,17 @@
         private String hospitalType;
         private int hospitalContact;
     }
+    class Parks extends Location {
+        private String parkName;
+        private boolean containsPlayArea;
+    }
+    class Hotels extends Location {
+        private String hotelName;
+        private int hotelContact;
+        private int hotelRating;
+        private String priceRange;
+    }
+
 
     public class SmartCity {
         public static void main(String[] args) {
