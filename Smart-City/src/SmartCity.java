@@ -38,18 +38,22 @@
         private double hotelRating;
         private String priceRange;
     }
+    class Time {
+        private String openingTime;
+        private String closingTime;
+    }
     class Restaurants extends Location {
         private String restaurantName;
         private double restaurantRating;
         private String foodType;
-        private String openingTime;
-        private String closingTime;
+        Time openingTime;
+        Time closingTime;
     }
     class touristPlaces extends Location {
         private String placeName;
         private String entryFee;
-        private String openingTime;
-        private String closingTime;
+        Time openingTime;
+        Time closingTime;
     }
     class History {
         private String historicalPlaceManufacturer;
