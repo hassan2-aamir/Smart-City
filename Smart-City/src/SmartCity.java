@@ -45,6 +45,12 @@
         private String openingTime;
         private String closingTime;
     }
+    class touristPlaces extends Location {
+        private String placeName;
+        private String entryFee;
+        private String openingTime;
+        private String closingTime;
+    }
 
     public class SmartCity {
         public static void main(String[] args) {
