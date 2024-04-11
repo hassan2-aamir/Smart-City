@@ -51,7 +51,12 @@
         private String openingTime;
         private String closingTime;
     }
-
+    class historicalPlaces extends touristPlaces {
+        private String historicalPlaceName;
+        private String historicalPlaceManufacturer;
+        private String historicalTimePeriod;
+        private String historicalTimeDuration;
+    }
     public class SmartCity {
         public static void main(String[] args) {
 
