@@ -4,22 +4,42 @@
         public void greet();
     }
     class City {
-    private String cityName;
-    private int population;
-    private double cityArea;
-    private int cityLandlineCode;
+    private static String cityName;
+    private static int population;
+    private static double cityArea;
+    private static int cityLandlineCode;
+
+    public City(String cityName, int population, double cityArea, int cityLandlineCode) {
+        this.cityName = cityName;
+        this.population = population;
+        this.cityArea = cityArea;
+        this.cityLandlineCode = cityLandlineCode;
     }
     class Culture extends City {
     private String cultureName;
-    private String language;
-    private String food;
-    private String mashroob;
-    private String clothes;
+    private String cultureLanguage;
+    private String cultureFood;
+    private String cultureMashroob;
+    private String cultureClothes;
+
+    public Culture(String cultureName, String language, String food, String mashroob, String clothes) {
+        super(cityName, population, cityArea, cityLandlineCode);
+        this.cultureName = cultureName;
+        cultureLanguage = language;
+        cultureFood = food;
+        cultureMashroob = mashroob;
+        cultureClothes = clothes;
     }
     class Location extends City {
-        private String name;
-        private double area;
+        private String locationName;
+        private double locationArearea;
         private int postalCode;
+        public Location(String name, double area, int postalCode) {
+            super(City.cityName, City.population, City.cityArea, City.cityLandlineCode);
+            locationName = name;
+            locationArearea = area;
+            this.postalCode = postalCode;
+        }
     }
     class Schools extends Location{
         private String schoolName;
