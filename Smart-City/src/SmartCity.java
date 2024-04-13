@@ -4,40 +4,42 @@
         public void greet();
     }
     class City {
-    private static String cityName;
-    private static int population;
-    private static double cityArea;
-    private static int cityLandlineCode;
+        protected static String cityName;
+        protected static int population;
+        protected static double cityArea;
+        protected static int cityLandlineCode;
 
-    public City(String cityName, int population, double cityArea, int cityLandlineCode) {
-        this.cityName = cityName;
-        this.population = population;
-        this.cityArea = cityArea;
-        this.cityLandlineCode = cityLandlineCode;
+        public City(String cityName, int population, double cityArea, int cityLandlineCode) {
+            this.cityName = cityName;
+            this.population = population;
+            this.cityArea = cityArea;
+            this.cityLandlineCode = cityLandlineCode;
+        }
     }
     class Culture extends City {
-    private String cultureName;
-    private String cultureLanguage;
-    private String cultureFood;
-    private String cultureMashroob;
-    private String cultureClothes;
+        private String cultureName;
+        private String cultureLanguage;
+        private String cultureFood;
+        private String cultureMashroob;
+        private String cultureClothes;
 
-    public Culture(String cultureName, String language, String food, String mashroob, String clothes) {
-        super(cityName, population, cityArea, cityLandlineCode);
-        this.cultureName = cultureName;
-        cultureLanguage = language;
-        cultureFood = food;
-        cultureMashroob = mashroob;
-        cultureClothes = clothes;
+        public Culture(String cultureName, String language, String food, String mashroob, String clothes) {
+            super(City.cityName, population, cityArea, cityLandlineCode);
+            this.cultureName = cultureName;
+            cultureLanguage = language;
+            cultureFood = food;
+            cultureMashroob = mashroob;
+            cultureClothes = clothes;
+        }
     }
     class Location extends City {
-        private String locationName;
-        private double locationArearea;
-        private int postalCode;
+        protected static String locationName;
+        protected static double locationArea;
+        protected static int postalCode;
         public Location(String name, double area, int postalCode) {
             super(City.cityName, City.population, City.cityArea, City.cityLandlineCode);
             locationName = name;
-            locationArearea = area;
+            locationArea = area;
             this.postalCode = postalCode;
         }
     }
@@ -45,8 +47,8 @@
         private String schoolName;
         private String schoolLevel;
         private int schoolContact;
-        public Schools(String name, double area, int postalCode, String schoolName, String schoolLevel, int schoolContact) {
-            super(name, area, postalCode);
+        public Schools(String schoolName, String schoolLevel, int schoolContact) {
+            super(Location.locationName, Location.locationArea, Location.postalCode);
             this.schoolName = schoolName;
             this.schoolLevel = schoolLevel;
             this.schoolContact = schoolContact;
@@ -57,7 +59,7 @@
         private String hospitalType;
         private int hospitalContact;
         public Hospitals(String name, double area, int postalCode, String hospitalName, String hospitalType, int hospitalContact) {
-            super(name, area, postalCode);
+            super(Location.locationName, Location.locationArea, Location.postalCode);
             this.hospitalName = hospitalName;
             this.hospitalType = hospitalType;
             this.hospitalContact = hospitalContact;
@@ -66,8 +68,8 @@
     class Parks extends Location {
         private String parkName;
         private boolean containsPlayArea;
-        public Parks(String name, double area, int postalCode, String parkName, boolean containsPlayArea) {
-            super(name, area, postalCode);
+        public Parks(String parkName, boolean containsPlayArea) {
+            super(Location.locationName, Location.locationArea, Location.postalCode);
             this.parkName = parkName;
             this.containsPlayArea = containsPlayArea;
         }
@@ -77,8 +79,8 @@
         private int hotelContact;
         private double hotelRating;
         private String priceRange;
-        public Hotels(String name, double area, int postalCode, String hotelName, int hotelContact, double hotelRating, String priceRange) {
-            super(name, area, postalCode);
+        public Hotels(String hotelName, int hotelContact, double hotelRating, String priceRange) {
+            super(Location.locationName, Location.locationArea, Location.postalCode);
             this.hotelName = hotelName;
             this.hotelContact = hotelContact;
             this.hotelRating = hotelRating;
@@ -95,22 +97,26 @@
         private String foodType;
         Time openingTime;
         Time closingTime;
-        public Restaurants(String name, double area, int postalCode, String restaurantName, double restaurantRating, String foodType) {
-            super(name, area, postalCode);
+        public Restaurants(String restaurantName, double restaurantRating, String foodType, Time openingTime, Time closingTime) {
+            super(Location.locationName, Location.locationArea, Location.postalCode);
             this.restaurantName = restaurantName;
             this.restaurantRating = restaurantRating;
             this.foodType = foodType;
+            this.openingTime = openingTime;
+            this.closingTime = closingTime;
         }
     }
     class touristPlaces extends Location {
-        private String placeName;
-        private String entryFee;
-        Time openingTime;
-        Time closingTime;
-        public touristPlaces(String name, double area, int postalCode, String placeName, String entryFee) {
-            super(name, area, postalCode);
-            this.placeName = placeName;
+        protected static String touristPlaceName;
+        protected static String entryFee;
+        static Time openingTime;
+        static Time closingTime;
+        public touristPlaces(String touristPlaceName, String entryFee, Time openingTime, Time closingTime) {
+            super(Location.locationName, Location.locationArea, Location.postalCode);
+            this.touristPlaceName = touristPlaceName;
             this.entryFee = entryFee;
+            this.openingTime = openingTime;
+            this.closingTime = closingTime;
         }
     }
     class History {
@@ -123,9 +129,12 @@
         History historicalPlaceManufacturer;
         History historicalTimePeriod;
         History historicalTimeDuration;
-        public historicalPlaces(String name, double area, int postalCode, String placeName, String entryFee, String historicalPlaceName) {
-            super(name, area, postalCode, placeName, entryFee);
-            this.historicalPlaceName = historicalPlaceName;
+       public historicalPlaces(History historicalPlaceManufacturer, History historicalTimePeriod, History historicalTimeDuration) {
+            super(touristPlaces.touristPlaceName, touristPlaces.entryFee, touristPlaces.openingTime, touristPlaces.closingTime);
+            this.historicalPlaceName = touristPlaces.touristPlaceName;
+            this.historicalPlaceManufacturer = historicalPlaceManufacturer;
+            this.historicalTimePeriod = historicalTimePeriod;
+            this.historicalTimeDuration = historicalTimeDuration;
         }
     }
     public class SmartCity {
