@@ -45,21 +45,45 @@
         private String schoolName;
         private String schoolLevel;
         private int schoolContact;
+        public Schools(String name, double area, int postalCode, String schoolName, String schoolLevel, int schoolContact) {
+            super(name, area, postalCode);
+            this.schoolName = schoolName;
+            this.schoolLevel = schoolLevel;
+            this.schoolContact = schoolContact;
+        }
     }
     class Hospitals extends Location{
         private String hospitalName;
         private String hospitalType;
         private int hospitalContact;
+        public Hospitals(String name, double area, int postalCode, String hospitalName, String hospitalType, int hospitalContact) {
+            super(name, area, postalCode);
+            this.hospitalName = hospitalName;
+            this.hospitalType = hospitalType;
+            this.hospitalContact = hospitalContact;
+        }
     }
     class Parks extends Location {
         private String parkName;
         private boolean containsPlayArea;
+        public Parks(String name, double area, int postalCode, String parkName, boolean containsPlayArea) {
+            super(name, area, postalCode);
+            this.parkName = parkName;
+            this.containsPlayArea = containsPlayArea;
+        }
     }
     class Hotels extends Location {
         private String hotelName;
         private int hotelContact;
         private double hotelRating;
         private String priceRange;
+        public Hotels(String name, double area, int postalCode, String hotelName, int hotelContact, double hotelRating, String priceRange) {
+            super(name, area, postalCode);
+            this.hotelName = hotelName;
+            this.hotelContact = hotelContact;
+            this.hotelRating = hotelRating;
+            this.priceRange = priceRange;
+        }
     }
     class Time {
         private String openingTime;
@@ -71,12 +95,23 @@
         private String foodType;
         Time openingTime;
         Time closingTime;
+        public Restaurants(String name, double area, int postalCode, String restaurantName, double restaurantRating, String foodType) {
+            super(name, area, postalCode);
+            this.restaurantName = restaurantName;
+            this.restaurantRating = restaurantRating;
+            this.foodType = foodType;
+        }
     }
     class touristPlaces extends Location {
         private String placeName;
         private String entryFee;
         Time openingTime;
         Time closingTime;
+        public touristPlaces(String name, double area, int postalCode, String placeName, String entryFee) {
+            super(name, area, postalCode);
+            this.placeName = placeName;
+            this.entryFee = entryFee;
+        }
     }
     class History {
         private String historicalPlaceManufacturer;
@@ -88,6 +123,10 @@
         History historicalPlaceManufacturer;
         History historicalTimePeriod;
         History historicalTimeDuration;
+        public historicalPlaces(String name, double area, int postalCode, String placeName, String entryFee, String historicalPlaceName) {
+            super(name, area, postalCode, placeName, entryFee);
+            this.historicalPlaceName = historicalPlaceName;
+        }
     }
     public class SmartCity {
         public static void main(String[] args) {
