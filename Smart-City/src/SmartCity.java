@@ -3,7 +3,7 @@
     interface Greetings {
         public void greet();
     }
-    class City {
+    class City implements Greetings{
         protected static String cityName;
         protected static int population;
         protected static double cityArea;
@@ -15,8 +15,11 @@
             this.cityArea = cityArea;
             this.cityLandlineCode = cityLandlineCode;
         }
+        public void greet() {
+            System.out.println("Welcome to " + cityName); // greeting message in GUI
+        }
     }
-    class Culture extends City {
+    class Culture extends City{
         private String cultureName;
         private String cultureLanguage;
         private String cultureFood;
@@ -31,6 +34,11 @@
             cultureMashroob = mashroob;
             cultureClothes = clothes;
         }
+
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + cultureName); // greeting message in GUI
+        }
     }
     class Location extends City {
         protected static String locationName;
@@ -41,6 +49,10 @@
             locationName = name;
             locationArea = area;
             this.postalCode = postalCode;
+        }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + locationName); // greeting message in GUI
         }
     }
     class Schools extends Location{
@@ -53,6 +65,10 @@
             this.schoolLevel = schoolLevel;
             this.schoolContact = schoolContact;
         }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + schoolName); // greeting message in GUI
+        }
     }
     class Hospitals extends Location{
         private String hospitalName;
@@ -64,6 +80,10 @@
             this.hospitalType = hospitalType;
             this.hospitalContact = hospitalContact;
         }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + hospitalName); // greeting message in GUI
+        }
     }
     class Parks extends Location {
         private String parkName;
@@ -72,6 +92,10 @@
             super(Location.locationName, Location.locationArea, Location.postalCode);
             this.parkName = parkName;
             this.containsPlayArea = containsPlayArea;
+        }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + parkName); // greeting message in GUI
         }
     }
     class Hotels extends Location {
@@ -85,6 +109,10 @@
             this.hotelContact = hotelContact;
             this.hotelRating = hotelRating;
             this.priceRange = priceRange;
+        }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + hotelName); // greeting message in GUI
         }
     }
     class Time {
@@ -105,18 +133,26 @@
             this.openingTime = openingTime;
             this.closingTime = closingTime;
         }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + restaurantName); // greeting message in GUI
+        }
     }
-    class touristPlaces extends Location {
+    class touristPlace extends Location {
         protected static String touristPlaceName;
         protected static String entryFee;
         static Time openingTime;
         static Time closingTime;
-        public touristPlaces(String touristPlaceName, String entryFee, Time openingTime, Time closingTime) {
+        public touristPlace(String touristPlaceName, String entryFee, Time openingTime, Time closingTime) {
             super(Location.locationName, Location.locationArea, Location.postalCode);
             this.touristPlaceName = touristPlaceName;
             this.entryFee = entryFee;
             this.openingTime = openingTime;
             this.closingTime = closingTime;
+        }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + touristPlaceName); // greeting message in GUI
         }
     }
     class History {
@@ -124,17 +160,21 @@
         private String historicalTimePeriod;
         private String historicalTimeDuration;
     }
-    class historicalPlaces extends touristPlaces {
+    class historicalPlaces extends touristPlace {
         private String historicalPlaceName;
         History historicalPlaceManufacturer;
         History historicalTimePeriod;
         History historicalTimeDuration;
        public historicalPlaces(History historicalPlaceManufacturer, History historicalTimePeriod, History historicalTimeDuration) {
-            super(touristPlaces.touristPlaceName, touristPlaces.entryFee, touristPlaces.openingTime, touristPlaces.closingTime);
-            this.historicalPlaceName = touristPlaces.touristPlaceName;
+            super(touristPlace.touristPlaceName, touristPlace.entryFee, touristPlace.openingTime, touristPlace.closingTime);
+            this.historicalPlaceName = touristPlace.touristPlaceName;
             this.historicalPlaceManufacturer = historicalPlaceManufacturer;
             this.historicalTimePeriod = historicalTimePeriod;
             this.historicalTimeDuration = historicalTimeDuration;
+        }
+        @Override
+        public void greet() {
+            System.out.println("Welcome to " + historicalPlaceName); // greeting message in GUI
         }
     }
     public class SmartCity {
