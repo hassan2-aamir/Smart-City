@@ -6,20 +6,30 @@
 //    composition classes
     class Images{
         private String image;
+        
         public Images(String image) {
             this.image = image;
         }
     }
     class Rating {
         private double rating;
+
         public Rating(double rating) {
             this.rating = rating;
         }
     }
     class Description{
         private String description;
+
         public Description(String description) {
         this.description = description;
+        }
+    }
+    class Facilities {
+        private String facilities;
+
+        public Facilities(String facilities) {
+        this.facilities = facilities;
         }
     }
     class University implements Greetings{
@@ -75,12 +85,7 @@
             System.out.println("Welcome to " + schoolName); // greeting message in GUI
         }
     }
-    class Facilities{
-        private String facilities;
-        public Facilities(String facilities) {
-            this.facilities = facilities;
-        }
-    }
+
     class KeyLocations extends Campuses{
         private String keyLocationName;
         private String KeyLocationType;
