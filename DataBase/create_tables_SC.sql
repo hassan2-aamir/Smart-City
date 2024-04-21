@@ -38,10 +38,10 @@ Campus_name varchar(20) not null,
 Campus_address double, 
 Campus_code int,
 Campus_image_ID varchar(10) not null,
-Campus_rating decimal(2,1),
+Campus_rating_ID int,
 constraint Campus_code_PK Primary Key (Campus_code),
 constraint Campus_image_ID_FK foreign key (Campus_image_ID) references Images(Image_ID),
-constraint Campus_rating_FK foreign key (Campus_rating) references Ratings(Rating_ID)
+constraint Campus_rating_ID_FK foreign key (Campus_rating_ID) references Ratings(Rating_ID)
 );
  
  create table Schools(
@@ -56,7 +56,7 @@ constraint Campus_rating_FK foreign key (Campus_rating) references Ratings(Ratin
  constraint Schools_Campus_code_FK foreign key (Schools_Campus_code) references Campuses(Campus_code),
  constraint School_image_ID_FK foreign key (School_image_ID) references Images(Image_ID),
  constraint School_description_ID_FK foreign key (School_description_ID) references Descriptions(Description_ID),
- constraint School_facilities_ID_FK foreign key (School_facilities_ID) references Facilities(Facilities_ID)
+ constraint School_facilities_ID_FK foreign key (School_facilities_ID) references Facilities(Facility_ID)
 );
 
 create table KeyLocations(
@@ -71,7 +71,7 @@ create table KeyLocations(
  constraint KeyLocation_Campus_code_FK foreign key (KeyLocation_Campus_code) references Campuses(Campus_code),
  constraint KeyLocation_image_ID_FK foreign key (KeyLocation_image_ID) references Images(Image_ID),
  constraint KeyLocation_description_ID_FK foreign key (KeyLocation_description_ID) references Descriptions(Description_ID),
- constraint KeyLocation_facilities_ID_FK foreign key (KeyLocation_facilities_ID) references Facilities(Facilities_ID)
+ constraint KeyLocation_facilities_ID_FK foreign key (KeyLocation_facilities_ID) references Facilities(Facility_ID)
 );
 
 create table Recreational_Spots(
@@ -85,7 +85,7 @@ create table Recreational_Spots(
  constraint Recreational_Spots_Campus_code_FK foreign key (Recreational_Spots_Campus_code) references Campuses(Campus_code),
  constraint Recreational_Spots_image_ID_FK foreign key (Recreational_Spots_image_ID) references Images(Image_ID),
  constraint Recreational_Spots_description_ID_FK foreign key (Recreational_Spots_description_ID) references Descriptions(Description_ID),
- constraint Recreational_Spots_facilities_ID_FK foreign key (Recreational_Spots_facilities_ID) references Facilities(Facilities_ID)
+ constraint Recreational_Spots_facilities_ID_FK foreign key (Recreational_Spots_facilities_ID) references Facilities(Facility_ID)
 );
 
 create table Hostels(
@@ -97,16 +97,14 @@ create table Hostels(
  Hostel_description_ID varchar(10),
  Hostel_facilities_ID varchar (10),
  Hostel_image_ID varchar(10) not null,
- Hostel_curfewOpening time,
- Hostel_curfewClosing time,
+ Hostel_curfewTiming_ID int,
  constraint Hostel_ID_PK Primary Key (Hostel_ID),
  constraint Hostel_Campus_code_FK foreign key (Hostel_Campus_code) references Campuses(Campus_code),
  constraint Hostel_image_ID_FK foreign key (Hostel_image_ID) references Images(Image_ID),
  constraint Hostel_description_ID_FK foreign key (Hostel_description_ID) references Descriptions(Description_ID),
- constraint Hostel_facilities_ID_FK foreign key (Hostel_facilities_ID) references Facilities(Facilities_ID),
+ constraint Hostel_facilities_ID_FK foreign key (Hostel_facilities_ID) references Facilities(Facility_ID),
  constraint Hostel_rating_ID_FK foreign key (Hostel_rating_ID) references Ratings(Rating_ID),
- constraint Hostel_curfewOpening_FK foreign key(Hostel_curfewOpening) references Times(Opening_time),
- constraint Hostel_curfewClosing_FK foreign key(Hostel_curfewClosing) references Times(Closing_time)
+ constraint Hostel_curfewTiming_ID_FK foreign key(Hostel_curfewTiming_ID) references Times(Time_ID)
 );
 
 create table FoodSpots(
@@ -119,20 +117,13 @@ create table FoodSpots(
  FoodSpot_description_ID varchar(10),
  FoodSpot_facilities_ID varchar (10),
  FoodSpot_image_ID varchar(10) not null,
- FoodSpot_openingTime time,
- FoodSpot_closingTime time,
+ FoodSpot_Timing_ID int,
  constraint FoodSpot_ID_PK Primary Key (FoodSpot_ID),
  constraint FoodSpot_Campus_code_FK foreign key (FoodSpot_Campus_code) references Campuses(Campus_code),
  constraint FoodSpot_image_ID_FK foreign key (FoodSpot_image_ID) references Images(Image_ID),
  constraint FoodSpot_description_ID_FK foreign key (FoodSpot_description_ID) references Descriptions(Description_ID),
- constraint FoodSpot_facilities_ID_FK foreign key (FoodSpot_facilities_ID) references Facilities(Facilities_ID),
+ constraint FoodSpot_facilities_ID_FK foreign key (FoodSpot_facilities_ID) references Facilities(Facility_ID),
  constraint FoodSpot_rating_ID_FK foreign key (FoodSpot_rating_ID) references Ratings(Rating_ID),
   constraint FoodSpot_Food_rating_ID_FK foreign key(FoodSpot_Food_rating_ID) references Ratings(Rating_ID),
- constraint FoodSpot_openingTime_FK foreign key(FoodSpot_openingTime) references Times(Opening_time),
- constraint FoodSpot_closingTime_FK foreign key(FoodSpot_closingTime) references Times(Closing_time)
+ constraint FoodSpot_Timing_ID_FK foreign key(FoodSpot_Timing_ID) references Times(Time_ID)
 );
-
-
-
-
-
