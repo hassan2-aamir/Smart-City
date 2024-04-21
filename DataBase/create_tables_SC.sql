@@ -109,6 +109,29 @@ create table Hostels(
  constraint Hostel_curfewClosing_FK foreign key(Hostel_curfewClosing) references Times(Closing_time)
 );
 
+create table FoodSpots(
+ FoodSpot_Campus_code int not null,
+ FoodSpot_ID varchar(20),
+ FoodSpot_name varchar(20) not null,
+ FoodSpot_rating_ID int,
+ FoodSpot_Food_rating_ID int,
+ FoodSpot_cuisineType varchar(10),
+ FoodSpot_description_ID varchar(10),
+ FoodSpot_facilities_ID varchar (10),
+ FoodSpot_image_ID varchar(10) not null,
+ FoodSpot_openingTime time,
+ FoodSpot_closingTime time,
+ constraint FoodSpot_ID_PK Primary Key (FoodSpot_ID),
+ constraint FoodSpot_Campus_code_FK foreign key (FoodSpot_Campus_code) references Campuses(Campus_code),
+ constraint FoodSpot_image_ID_FK foreign key (FoodSpot_image_ID) references Images(Image_ID),
+ constraint FoodSpot_description_ID_FK foreign key (FoodSpot_description_ID) references Descriptions(Description_ID),
+ constraint FoodSpot_facilities_ID_FK foreign key (FoodSpot_facilities_ID) references Facilities(Facilities_ID),
+ constraint FoodSpot_rating_ID_FK foreign key (FoodSpot_rating_ID) references Ratings(Rating_ID),
+  constraint FoodSpot_Food_rating_ID_FK foreign key(FoodSpot_Food_rating_ID) references Ratings(Rating_ID),
+ constraint FoodSpot_openingTime_FK foreign key(FoodSpot_openingTime) references Times(Opening_time),
+ constraint FoodSpot_closingTime_FK foreign key(FoodSpot_closingTime) references Times(Closing_time)
+);
+
 
 
 

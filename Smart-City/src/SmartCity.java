@@ -163,16 +163,18 @@
     class FoodSpots extends Campuses {
         private String foodSpotName;
         private int foodSpotID;
-        private Rating restaurantRating;
+        private Rating foodSpotRating;
+        private Rating foodRating;
         private String cuisineType ;
-        Time openingTime;
-        Time closingTime;
+        private Time openingTime;
+        private Time closingTime;
         private Images image;
-        public FoodSpots(String foodSpotName, int foodSpotID, Rating restaurantRating, String cuisineType, Time openingTime, Time closingTime, Images image) {
+        public FoodSpots(String foodSpotName, int foodSpotID, Rating foodSpotRating, Rating foodRating, String cuisineType, Time openingTime, Time closingTime, Images image) {
             super(Campuses.campusName, Campuses.campusLocation, Campuses.campusCode, Campuses.image);
             this.foodSpotName = foodSpotName;
             this.foodSpotID = foodSpotID;
-            this.restaurantRating = restaurantRating;
+            this.foodSpotRating = foodSpotRating;
+            this.foodRating = foodRating;
             this.cuisineType = cuisineType;
             this.openingTime = openingTime;
             this.closingTime = closingTime;
