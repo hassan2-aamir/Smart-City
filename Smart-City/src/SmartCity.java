@@ -6,7 +6,7 @@
 //    composition classes
     class Images{
         private String image;
-        
+
         public Images(String image) {
             this.image = image;
         }
@@ -31,6 +31,10 @@
         public Facilities(String facilities) {
         this.facilities = facilities;
         }
+    }
+    class Time {
+        private String openingTime;
+        private String closingTime;
     }
     class University implements Greetings{
         protected static String UniName;
@@ -87,13 +91,15 @@
     }
 
     class KeyLocations extends Campuses{
+        private String keyLocationID;
         private String keyLocationName;
         private String KeyLocationType;
         private Description description;
         private  Facilities facilities;
         private Images image;
-        public KeyLocations(String keyLocationName, String KeyLocationType, Description description, Facilities facilities, Images image) {
+        public KeyLocations(String keyLocationID,String keyLocationName, String KeyLocationType, Description description, Facilities facilities, Images image) {
             super(Campuses.campusName, Campuses.campusLocation, Campuses.campusCode, Campuses.image);
+            this.keyLocationID = keyLocationID;
             this.keyLocationName = keyLocationName;
             this.KeyLocationType = KeyLocationType;
             this.description = description;
@@ -153,10 +159,7 @@
             System.out.println("Welcome to " + hostelName); // greeting message in GUI
         }
     }
-    class Time {
-        private String openingTime;
-        private String closingTime;
-    }
+
     class FoodSpots extends Campuses {
         private String foodSpotName;
         private int foodSpotID;

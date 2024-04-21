@@ -36,6 +36,38 @@ constraint Campus_code_PK Primary Key (Campus_code),
 constraint Campus_image_ID_FK foreign key (Campus_image_ID) references Images(Image_ID),
 constraint Campus_rating_FK foreign key (Campus_rating) references Ratings(Rating_ID)
 );
+ 
+ create table Schools(
+ Schools_Campus_code int not null,
+ School_ID int,
+ School_name varchar(20) not null,
+ School_contact int,
+ School_description_ID varchar(10),
+ School_facilities_ID varchar (10),
+ School_image_ID varchar(10) not null,
+ constraint School_ID_PK Primary Key (School_ID),
+ constraint Schools_Campus_code_FK foreign key (Schools_Campus_code) references Campuses(Campus_code),
+ constraint School_image_ID_FK foreign key (School_image_ID) references Images(Image_ID),
+ constraint School_description_ID_FK foreign key (School_description_ID) references Description(Description_ID),
+ constraint School_facilities_ID_FK foreign key (School_facilities_ID) references Facilities(Facilities_ID)
+);
+
+create table KeyLocations(
+ KeyLocation_Campus_code int not null,
+ KeyLocation_ID int,
+ KeyLocation_name varchar(20) not null,
+ KeyLocation_type varchar(20),
+ KeyLocation_description_ID varchar(10),
+ KeyLocation_facilities_ID varchar (10),
+ KeyLocation_image_ID varchar(10) not null,
+ constraint KeyLocation_ID_PK Primary Key (KeyLocation_ID),
+ constraint KeyLocation_Campus_code_FK foreign key (KeyLocation_Campus_code) references Campuses(Campus_code),
+ constraint KeyLocation_image_ID_FK foreign key (KeyLocation_image_ID) references Images(Image_ID),
+ constraint KeyLocation_description_ID_FK foreign key (KeyLocation_description_ID) references Description(Description_ID),
+ constraint KeyLocation_facilities_ID_FK foreign key (KeyLocation_facilities_ID) references Facilities(Facilities_ID)
+);
+
+
 
 
 
