@@ -13,6 +13,18 @@ CREATE TABLE Ratings (
     constraint Rating_PK primary key (Rating_ID)
 );
 
+CREATE TABLE Description (
+    Description_ID varchar(10),
+    Description_text TEXT,
+    constraint Description_ID_PK primary key (Description_ID)
+);
+
+CREATE TABLE Facilities (
+    Facility_ID varchar(10),
+    Facilities TEXT,
+    constraint Facility_ID_PK primary key (Facility_ID)
+);
+
 create table Campuses(
 Uni_name varchar(20),
 Campus_name varchar(20) not null, 
