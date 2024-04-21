@@ -41,62 +41,83 @@
     }
     class Schools extends Campuses{
         private String schoolName;
-        private String schoolLevel;
+        private String schoolID;
         private int schoolContact;
-        public Schools(String schoolName, String schoolLevel, int schoolContact) {
-            super(Location.locationName, Location.locationArea, Location.postalCode);
+        private Description description;
+        private  Facilities facilities;
+        public Schools(String schoolName, String schoolID, int schoolContact, Description description, Facilities facilities) {
+            super(Campuses.campusName, Campuses.campusLocation, Campuses.campusCode);
             this.schoolName = schoolName;
-            this.schoolLevel = schoolLevel;
+            this.schoolID = schoolID;
             this.schoolContact = schoolContact;
+            this.description = description;
+            this.facilities = facilities;
         }
         @Override
         public void greet() {
             System.out.println("Welcome to " + schoolName); // greeting message in GUI
         }
     }
-    class Hospitals extends Location{
-        private String hospitalName;
-        private String hospitalType;
-        private int hospitalContact;
-        public Hospitals(String name, double area, int postalCode, String hospitalName, String hospitalType, int hospitalContact) {
-            super(Location.locationName, Location.locationArea, Location.postalCode);
-            this.hospitalName = hospitalName;
-            this.hospitalType = hospitalType;
-            this.hospitalContact = hospitalContact;
+    class Facilities{
+        private String facilities;
+        public Facilities(String facilities) {
+            this.facilities = facilities;
+        }
+    }
+    class KeyLocations extends Campuses{
+        private String keyLocationName;
+        private String KeyLocationType;
+        private Description description;
+        private  Facilities facilities;
+        public KeyLocations(String keyLocationName, String KeyLocationType, Description description, Facilities facilities) {
+            super(Campuses.campusName, Campuses.campusLocation, Campuses.campusCode);
+            this.keyLocationName = keyLocationName;
+            this.KeyLocationType = KeyLocationType;
+            this.description = description;
+            this.facilities = facilities;
         }
         @Override
         public void greet() {
-            System.out.println("Welcome to " + hospitalName); // greeting message in GUI
+            System.out.println("Welcome to " + keyLocationName); // greeting message in GUI
         }
     }
-    class Parks extends Location {
-        private String parkName;
-        private boolean containsPlayArea;
-        public Parks(String parkName, boolean containsPlayArea) {
-            super(Location.locationName, Location.locationArea, Location.postalCode);
-            this.parkName = parkName;
-            this.containsPlayArea = containsPlayArea;
+    class RecreationalSpots  extends Campuses {
+        private String recreationalSpotName;
+        private int spotID;
+        private Description description;
+        private  Facilities facilities;
+        public RecreationalSpots(String recreationalSpotName, int spotID, Description description, Facilities facilities) {
+            super(Campuses.campusName, Campuses.campusLocation, Campuses.campusCode);
+            this.recreationalSpotName = recreationalSpotName;
+            this.spotID = spotID;
+            this.description = description;
+            this.facilities = facilities;
         }
         @Override
         public void greet() {
-            System.out.println("Welcome to " + parkName); // greeting message in GUI
+            System.out.println("Welcome to " + recreationalSpotName); // greeting message in GUI
         }
     }
-    class Hotels extends Location {
-        private String hotelName;
-        private int hotelContact;
+    class Hostels extends Campuses {
+        private String hostelName;
+        private int hostelID;
         private double hotelRating;
-        private String priceRange;
-        public Hotels(String hotelName, int hotelContact, double hotelRating, String priceRange) {
-            super(Location.locationName, Location.locationArea, Location.postalCode);
-            this.hotelName = hotelName;
-            this.hotelContact = hotelContact;
+        private String hostelType;
+        private Description description;
+        private  Facilities facilities;
+
+        public Hostels(String hostelName, int hostelID, double hotelRating, String hostelType, Description description, Facilities facilities) {
+            super(Campuses.campusName, Campuses.campusLocation, Campuses.campusCode);
+            this.hostelName = hostelName;
+            this.hostelID = hostelID;
             this.hotelRating = hotelRating;
-            this.priceRange = priceRange;
+            this.hostelType = hostelType;
+            this.description = description;
+            this.facilities = facilities;
         }
         @Override
         public void greet() {
-            System.out.println("Welcome to " + hotelName); // greeting message in GUI
+            System.out.println("Welcome to " + hostelName); // greeting message in GUI
         }
     }
     class Time {
