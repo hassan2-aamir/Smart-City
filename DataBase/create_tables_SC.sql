@@ -13,7 +13,7 @@ CREATE TABLE Ratings (
     constraint Rating_PK primary key (Rating_ID)
 );
 
-CREATE TABLE Description (
+CREATE TABLE Descriptions (
     Description_ID varchar(10),
     Description_text TEXT,
     constraint Description_ID_PK primary key (Description_ID)
@@ -23,6 +23,13 @@ CREATE TABLE Facilities (
     Facility_ID varchar(10),
     Facilities TEXT,
     constraint Facility_ID_PK primary key (Facility_ID)
+);
+
+CREATE TABLE Times (
+    Time_ID int AUTO_INCREMENT,
+    Opening_time time,
+    Closing_time time,
+    constraint Time_ID_PK primary key (Time_ID)
 );
 
 create table Campuses(
@@ -48,7 +55,7 @@ constraint Campus_rating_FK foreign key (Campus_rating) references Ratings(Ratin
  constraint School_ID_PK Primary Key (School_ID),
  constraint Schools_Campus_code_FK foreign key (Schools_Campus_code) references Campuses(Campus_code),
  constraint School_image_ID_FK foreign key (School_image_ID) references Images(Image_ID),
- constraint School_description_ID_FK foreign key (School_description_ID) references Description(Description_ID),
+ constraint School_description_ID_FK foreign key (School_description_ID) references Descriptions(Description_ID),
  constraint School_facilities_ID_FK foreign key (School_facilities_ID) references Facilities(Facilities_ID)
 );
 
@@ -63,8 +70,22 @@ create table KeyLocations(
  constraint KeyLocation_ID_PK Primary Key (KeyLocation_ID),
  constraint KeyLocation_Campus_code_FK foreign key (KeyLocation_Campus_code) references Campuses(Campus_code),
  constraint KeyLocation_image_ID_FK foreign key (KeyLocation_image_ID) references Images(Image_ID),
- constraint KeyLocation_description_ID_FK foreign key (KeyLocation_description_ID) references Description(Description_ID),
+ constraint KeyLocation_description_ID_FK foreign key (KeyLocation_description_ID) references Descriptions(Description_ID),
  constraint KeyLocation_facilities_ID_FK foreign key (KeyLocation_facilities_ID) references Facilities(Facilities_ID)
+);
+
+create table Recreational_Spots(
+ Recreational_Spots_Campus_code int not null,
+ Recreational_Spots_ID varchar(20),
+ Recreational_Spots_name varchar(20) not null,
+ Recreational_Spots_description_ID varchar(10),
+ Recreational_Spots_facilities_ID varchar (10),
+ Recreational_Spots_image_ID varchar(10) not null,
+ constraint Recreational_Spots_ID_PK Primary Key (Recreational_Spots_ID),
+ constraint Recreational_Spots_Campus_code_FK foreign key (Recreational_Spots_Campus_code) references Campuses(Campus_code),
+ constraint Recreational_Spots_image_ID_FK foreign key (Recreational_Spots_image_ID) references Images(Image_ID),
+ constraint Recreational_Spots_description_ID_FK foreign key (Recreational_Spots_description_ID) references Descriptions(Description_ID),
+ constraint Recreational_Spots_facilities_ID_FK foreign key (Recreational_Spots_facilities_ID) references Facilities(Facilities_ID)
 );
 
 
