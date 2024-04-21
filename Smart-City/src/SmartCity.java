@@ -3,59 +3,43 @@
     interface Greetings {
         public void greet();
     }
-    class City implements Greetings{
-        protected static String cityName;
-        protected static int population;
-        protected static double cityArea;
-        protected static int cityLandlineCode;
+    class University implements Greetings{
+        protected static String UniName;
+        protected static String location; // location(country) of the university
+        protected static Description description;
 
-        public City(String cityName, int population, double cityArea, int cityLandlineCode) {
-            this.cityName = cityName;
-            this.population = population;
-            this.cityArea = cityArea;
-            this.cityLandlineCode = cityLandlineCode;
+        public University(String UniName, String location, Description description) {
+            this.UniName = UniName;
+            this.location = location;
+            this.description = description;
         }
         public void greet() {
-            System.out.println("Welcome to " + cityName); // greeting message in GUI
+            System.out.println("Welcome to " + UniName); // greeting message in GUI
         }
     }
-    class Culture extends City{
-        private String cultureName;
-        private String cultureLanguage;
-        private String cultureFood;
-        private String cultureMashroob;
-        private String cultureClothes;
+    class Description{
+        private String description;
 
-        public Culture(String cultureName, String language, String food, String mashroob, String clothes) {
-            super(City.cityName, population, cityArea, cityLandlineCode);
-            this.cultureName = cultureName;
-            cultureLanguage = language;
-            cultureFood = food;
-            cultureMashroob = mashroob;
-            cultureClothes = clothes;
-        }
-
-        @Override
-        public void greet() {
-            System.out.println("Welcome to " + cultureName); // greeting message in GUI
+        public Description(String description) {
+            this.description = description;
         }
     }
-    class Location extends City {
-        protected static String locationName;
-        protected static double locationArea;
-        protected static int postalCode;
-        public Location(String name, double area, int postalCode) {
-            super(City.cityName, City.population, City.cityArea, City.cityLandlineCode);
-            locationName = name;
-            locationArea = area;
-            this.postalCode = postalCode;
+    class Campuses extends University {
+        protected static String campusName;
+        protected static String campusLocation;
+        protected static int campusCode;
+        public Campuses(String campusName, String campusLocation,int campusCode) {
+            super(University.UniName, University.location, University.description);
+            this.campusName = campusName;
+            this.campusLocation = campusLocation;
+            this.campusCode = campusCode;
         }
         @Override
         public void greet() {
-            System.out.println("Welcome to " + locationName); // greeting message in GUI
+            System.out.println("Welcome to " + campusName); // greeting message in GUI
         }
     }
-    class Schools extends Location{
+    class Schools extends Campuses{
         private String schoolName;
         private String schoolLevel;
         private int schoolContact;
