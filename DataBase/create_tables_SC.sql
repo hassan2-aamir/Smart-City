@@ -88,6 +88,27 @@ create table Recreational_Spots(
  constraint Recreational_Spots_facilities_ID_FK foreign key (Recreational_Spots_facilities_ID) references Facilities(Facilities_ID)
 );
 
+create table Hostels(
+ Hostel_Campus_code int not null,
+ Hostel_ID varchar(20),
+ Hostel_name varchar(20) not null,
+ Hostel_rating_ID int,
+ Hostel_type varchar(10),
+ Hostel_description_ID varchar(10),
+ Hostel_facilities_ID varchar (10),
+ Hostel_image_ID varchar(10) not null,
+ Hostel_curfewOpening time,
+ Hostel_curfewClosing time,
+ constraint Hostel_ID_PK Primary Key (Hostel_ID),
+ constraint Hostel_Campus_code_FK foreign key (Hostel_Campus_code) references Campuses(Campus_code),
+ constraint Hostel_image_ID_FK foreign key (Hostel_image_ID) references Images(Image_ID),
+ constraint Hostel_description_ID_FK foreign key (Hostel_description_ID) references Descriptions(Description_ID),
+ constraint Hostel_facilities_ID_FK foreign key (Hostel_facilities_ID) references Facilities(Facilities_ID),
+ constraint Hostel_rating_ID_FK foreign key (Hostel_rating_ID) references Ratings(Rating_ID),
+ constraint Hostel_curfewOpening_FK foreign key(Hostel_curfewOpening) references Times(Opening_time),
+ constraint Hostel_curfewClosing_FK foreign key(Hostel_curfewClosing) references Times(Closing_time)
+);
+
 
 
 
