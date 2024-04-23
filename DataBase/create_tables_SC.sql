@@ -1,129 +1,112 @@
-create table Images(
-    Image_ID varchar(10),
+create database SmartCity;
+-- Create Images table with primary key
+CREATE TABLE Images (
+    Image_ID VARCHAR(10),
     Image_name VARCHAR(255),
-    image_data LONGBLOB NOT NULL,
-    image_type VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    constraint Image_ID_PK Primary key (Image_ID)
-    );
-    
+    image_link VARCHAR(500),
+    CONSTRAINT Image_ID_PK PRIMARY KEY (Image_ID)
+);
+
+-- Create Ratings table with primary key
 CREATE TABLE Ratings (
-    Rating_ID INT AUTO_INCREMENT,
+    Rating_ID VARCHAR(10),
     Rating DECIMAL(2,1) NOT NULL,
-    constraint Rating_PK primary key (Rating_ID)
+    CONSTRAINT Rating_PK PRIMARY KEY (Rating_ID)
 );
 
+-- Create Descriptions table with primary key
 CREATE TABLE Descriptions (
-    Description_ID varchar(10),
+    Description_ID VARCHAR(10),
     Description_text TEXT,
-    constraint Description_ID_PK primary key (Description_ID)
+    CONSTRAINT Description_ID_PK PRIMARY KEY (Description_ID)
 );
 
+-- Create Facilities table with primary key
 CREATE TABLE Facilities (
-    Facility_ID varchar(10),
+    Facility_ID VARCHAR(10),
     Facilities TEXT,
-    constraint Facility_ID_PK primary key (Facility_ID)
+    CONSTRAINT Facility_ID_PK PRIMARY KEY (Facility_ID)
 );
 
+-- Create Times table with primary key
 CREATE TABLE Times (
-    Time_ID int AUTO_INCREMENT,
-    Opening_time time,
-    Closing_time time,
-    constraint Time_ID_PK primary key (Time_ID)
+    Time_ID VARCHAR(10),
+    Opening_time TIME,
+    Closing_time TIME,
+    CONSTRAINT Time_ID_PK PRIMARY KEY (Time_ID)
 );
 
-create table Campuses(
-Uni_name varchar(20),
-Campus_name varchar(20) not null, 
-Campus_address double, 
-Campus_code int,
-Campus_image_ID varchar(10) not null,
-Campus_rating_ID int,
-constraint Campus_code_PK Primary Key (Campus_code),
-constraint Campus_image_ID_FK foreign key (Campus_image_ID) references Images(Image_ID),
-constraint Campus_rating_ID_FK foreign key (Campus_rating_ID) references Ratings(Rating_ID)
-);
- 
- create table Schools(
- Schools_Campus_code int not null,
- School_ID int,
- School_name varchar(20) not null,
- School_contact int,
- School_description_ID varchar(10),
- School_facilities_ID varchar (10),
- School_image_ID varchar(10) not null,
- constraint School_ID_PK Primary Key (School_ID),
- constraint Schools_Campus_code_FK foreign key (Schools_Campus_code) references Campuses(Campus_code),
- constraint School_image_ID_FK foreign key (School_image_ID) references Images(Image_ID),
- constraint School_description_ID_FK foreign key (School_description_ID) references Descriptions(Description_ID),
- constraint School_facilities_ID_FK foreign key (School_facilities_ID) references Facilities(Facility_ID)
+-- Create Campuses table with primary key
+CREATE TABLE Campuses (
+    Campus_code VARCHAR(10),
+    Uni_name VARCHAR(20),
+    Campus_name VARCHAR(20) NOT NULL,
+    Campus_address VARCHAR(1024),
+    Campus_image_ID VARCHAR(10) NOT NULL,
+    Campus_rating_ID varchar(10),
+    CONSTRAINT Campus_code_PK PRIMARY KEY (Campus_code)
 );
 
-create table KeyLocations(
- KeyLocation_Campus_code int not null,
- KeyLocation_ID int,
- KeyLocation_name varchar(20) not null,
- KeyLocation_type varchar(20),
- KeyLocation_description_ID varchar(10),
- KeyLocation_facilities_ID varchar (10),
- KeyLocation_image_ID varchar(10) not null,
- constraint KeyLocation_ID_PK Primary Key (KeyLocation_ID),
- constraint KeyLocation_Campus_code_FK foreign key (KeyLocation_Campus_code) references Campuses(Campus_code),
- constraint KeyLocation_image_ID_FK foreign key (KeyLocation_image_ID) references Images(Image_ID),
- constraint KeyLocation_description_ID_FK foreign key (KeyLocation_description_ID) references Descriptions(Description_ID),
- constraint KeyLocation_facilities_ID_FK foreign key (KeyLocation_facilities_ID) references Facilities(Facility_ID)
+-- Create Schools table with primary key
+CREATE TABLE Schools (
+    School_ID VARCHAR(10),
+    School_Campus_code VARCHAR(10) NOT NULL,
+    School_name VARCHAR(20) NOT NULL,
+    School_contact INT,
+    School_description_ID VARCHAR(10),
+    School_facilities_ID VARCHAR(10),
+    School_image_ID VARCHAR(10) NOT NULL,
+    CONSTRAINT School_ID_PK PRIMARY KEY (School_ID)
 );
 
-create table Recreational_Spots(
- Recreational_Spots_Campus_code int not null,
- Recreational_Spots_ID varchar(20),
- Recreational_Spots_name varchar(20) not null,
- Recreational_Spots_description_ID varchar(10),
- Recreational_Spots_facilities_ID varchar (10),
- Recreational_Spots_image_ID varchar(10) not null,
- constraint Recreational_Spots_ID_PK Primary Key (Recreational_Spots_ID),
- constraint Recreational_Spots_Campus_code_FK foreign key (Recreational_Spots_Campus_code) references Campuses(Campus_code),
- constraint Recreational_Spots_image_ID_FK foreign key (Recreational_Spots_image_ID) references Images(Image_ID),
- constraint Recreational_Spots_description_ID_FK foreign key (Recreational_Spots_description_ID) references Descriptions(Description_ID),
- constraint Recreational_Spots_facilities_ID_FK foreign key (Recreational_Spots_facilities_ID) references Facilities(Facility_ID)
+-- Create KeyLocations table with primary key
+CREATE TABLE KeyLocations (
+    KeyLocation_ID VARCHAR(10),
+    KeyLocation_Campus_code VARCHAR(10) NOT NULL,
+    KeyLocation_name VARCHAR(20) NOT NULL,
+    KeyLocation_type VARCHAR(20),
+    KeyLocation_description_ID VARCHAR(10),
+    KeyLocation_facilities_ID VARCHAR(10),
+    KeyLocation_image_ID VARCHAR(10) NOT NULL,
+    CONSTRAINT KeyLocation_ID_PK PRIMARY KEY (KeyLocation_ID)
 );
 
-create table Hostels(
- Hostel_Campus_code int not null,
- Hostel_ID varchar(20),
- Hostel_name varchar(20) not null,
- Hostel_rating_ID int,
- Hostel_type varchar(10),
- Hostel_description_ID varchar(10),
- Hostel_facilities_ID varchar (10),
- Hostel_image_ID varchar(10) not null,
- Hostel_curfewTiming_ID int,
- constraint Hostel_ID_PK Primary Key (Hostel_ID),
- constraint Hostel_Campus_code_FK foreign key (Hostel_Campus_code) references Campuses(Campus_code),
- constraint Hostel_image_ID_FK foreign key (Hostel_image_ID) references Images(Image_ID),
- constraint Hostel_description_ID_FK foreign key (Hostel_description_ID) references Descriptions(Description_ID),
- constraint Hostel_facilities_ID_FK foreign key (Hostel_facilities_ID) references Facilities(Facility_ID),
- constraint Hostel_rating_ID_FK foreign key (Hostel_rating_ID) references Ratings(Rating_ID),
- constraint Hostel_curfewTiming_ID_FK foreign key(Hostel_curfewTiming_ID) references Times(Time_ID)
+-- Create Recreational_Spots table with primary key
+CREATE TABLE Recreational_Spots (
+    Recreational_Spots_ID VARCHAR(20),
+    Recreational_Spots_Campus_code VARCHAR(10) NOT NULL,
+    Recreational_Spots_name VARCHAR(20) NOT NULL,
+    Recreational_Spots_description_ID VARCHAR(10),
+    Recreational_Spots_facilities_ID VARCHAR(10),
+    Recreational_Spots_image_ID VARCHAR(10) NOT NULL,
+    CONSTRAINT Recreational_Spots_ID_PK PRIMARY KEY (Recreational_Spots_ID)
 );
 
-create table FoodSpots(
- FoodSpot_Campus_code int not null,
- FoodSpot_ID varchar(20),
- FoodSpot_name varchar(20) not null,
- FoodSpot_rating_ID int,
- FoodSpot_Food_rating_ID int,
- FoodSpot_cuisineType varchar(10),
- FoodSpot_description_ID varchar(10),
- FoodSpot_facilities_ID varchar (10),
- FoodSpot_image_ID varchar(10) not null,
- FoodSpot_Timing_ID int,
- constraint FoodSpot_ID_PK Primary Key (FoodSpot_ID),
- constraint FoodSpot_Campus_code_FK foreign key (FoodSpot_Campus_code) references Campuses(Campus_code),
- constraint FoodSpot_image_ID_FK foreign key (FoodSpot_image_ID) references Images(Image_ID),
- constraint FoodSpot_description_ID_FK foreign key (FoodSpot_description_ID) references Descriptions(Description_ID),
- constraint FoodSpot_facilities_ID_FK foreign key (FoodSpot_facilities_ID) references Facilities(Facility_ID),
- constraint FoodSpot_rating_ID_FK foreign key (FoodSpot_rating_ID) references Ratings(Rating_ID),
-  constraint FoodSpot_Food_rating_ID_FK foreign key(FoodSpot_Food_rating_ID) references Ratings(Rating_ID),
- constraint FoodSpot_Timing_ID_FK foreign key(FoodSpot_Timing_ID) references Times(Time_ID)
+-- Create Hostels table with primary key
+CREATE TABLE Hostels (
+	Hostel_ID VARCHAR(20),
+    Hostel_Campus_code VARCHAR(10) NOT NULL,
+    Hostel_name VARCHAR(20) NOT NULL,
+    Hostel_rating_ID VARCHAR(10),
+    Hostel_type VARCHAR(10),
+    Hostel_description_ID VARCHAR(10),
+    Hostel_facilities_ID VARCHAR(10),
+    Hostel_image_ID VARCHAR(10) NOT NULL,
+    Hostel_curfewTiming_ID VARCHAR(10),
+    CONSTRAINT Hostel_ID_PK PRIMARY KEY (Hostel_ID)
+);
+
+-- Create FoodSpots table with primary key
+CREATE TABLE FoodSpots (
+    FoodSpot_Campus_code VARCHAR(10) NOT NULL,
+    FoodSpot_ID VARCHAR(20),
+    FoodSpot_name VARCHAR(20) NOT NULL,
+    FoodSpot_rating_ID VARCHAR(10),
+    FoodSpot_Food_rating_ID VARCHAR(10),
+    FoodSpot_cuisineType VARCHAR(10),
+    FoodSpot_description_ID VARCHAR(10),
+    FoodSpot_facilities_ID VARCHAR(10),
+    FoodSpot_image_ID VARCHAR(10) NOT NULL,
+    FoodSpot_Timing_ID VARCHAR(10),
+    CONSTRAINT FoodSpot_ID_PK PRIMARY KEY (FoodSpot_ID)
 );
