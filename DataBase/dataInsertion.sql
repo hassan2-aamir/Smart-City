@@ -25,3 +25,22 @@ insert into schools(School_ID, School_Campus_code, School_name, School_contact, 
 ("HSINES-12","NH-12T","SINES","05190852606","SINE-DID15","SINE-FID15","NS-15"),
 ("HIAEC-12","NH-12T","IAEC",NULL,"IAEC-DID16","IAEC-FID16","NS-16"),
 ("HRIMS-12","NH-12T","RIMMS","051908526506","RIMS-DID17","RIMS-FID17","NS-17");
+
+insert into hostels(Hostel_ID,Hostel_Campus_code,Hostel_name,Hostel_rating_ID,Hostel_type,Hostel_description_ID,Hostel_facilities_ID,Hostel_image_ID,Hostel_curfewTiming_ID)
+values("GZL-H12","NH-12T","Ghazali Hostel","NH-1","UG-Male","NH-DID1","NH-FID1","NH-IMG1","NH-T1"),
+("ZKR-H12","NH-12T","Zakariya Hostel","NH-2","UG-Male","NH-DID2","NH-FID2","NH-IMG2","NH-T2"),
+("BRN-H12","NH-12T","Beruni Hostel","NH-3","UG-Male","NH-DID3","NH-FID3","NH-IMG3","NH-T3"),
+("LQT-H12","NH-12T","Liaquat Hostel","NH-4","UG-Male","NH-DID4","NH-FID4","NH-IMG4","NH-T4"),
+("ATR-H12","NH-12T","Attar Hostel","NH-5","UG-Male","NH-DID5","NH-FID5","NH-IMG5","NH-T5"),
+("RHM-H12","NH-12T","Rahmat Hostel","NH-6","UG-Male","NH-DID6","NH-FID6","NH-IMG6","NH-T6"),
+("RZI-H12","NH-12T","Razi Hostel","NH-7","UG-Male","NH-DID7","NH-FID7","NH-IMG7","NH-T7"),
+("HJR-H12","NH-12T","Hajveri Hostel","NH-8","UG-Male","NH-DID8","NH-FID8","NH-IMG8","NH-T8"),
+("RMI-H12","NH-12T","Rumi Hostel","NH-9","PG-Male","NH-DID9","NH-FID9","NH-IMG9","NH-T9"),
+("JHR-H12","NH-12T","Johar Hostel","NH-10","PG-Male","NH-DID10","NH-FID10","NH-IMG10","NH-T10"),
+("AMR-H12","NH-12T","Ammar Hostel","NH-11","PG-Male","NH-DID11","NH-FID11","NH-IMG11","NH-T11"),
+("FTM1-H12","NH-12T","Fatima Hostel-Block1","NH-12","PG-Female","NH-DID12","NH-FID12","NH-IMG12","NH-T12"),
+("KDJ-H12","NH-12T","Khadija Hostel","NH-13","UG-Female","NH-DID13","NH-FID13","NH-IMG13","NH-T13"),
+("AYS-H12","NH-12T","Ayesha Hostel","NH-14","UG-Female","NH-DID14","NH-FID14","NH-IMG14","NH-T14"),
+("AMN-H12","NH-12T","Amna Hostel","NH-15","UG-Female","NH-DID15","NH-FID15","NH-IMG15","NH-T15"),
+("ZNB-H12","NH-12T","Zainab Hostel","NH-16","UG-Female","NH-DID16","NH-FID16","NH-IMG16","NH-T16"),
+("FTM2-H12","NH-12T","Fatima Hostel-Block2","NH-17","PG-Female","NH-DID17","NH-FID1","NH-IMG17","NH-T17");
