@@ -52,8 +52,8 @@ CREATE TABLE Schools (
     School_ID VARCHAR(10),
     School_Campus_code VARCHAR(10) NOT NULL,
     School_name VARCHAR(20) NOT NULL,
-    School_contact INT,
-    School_description_ID VARCHAR(10),
+	School_contact VARCHAR(20),
+	School_description_ID VARCHAR(10),
     School_facilities_ID VARCHAR(10),
     School_image_ID VARCHAR(10) NOT NULL,
     CONSTRAINT School_ID_PK PRIMARY KEY (School_ID)
