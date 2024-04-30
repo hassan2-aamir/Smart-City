@@ -78,4 +78,29 @@ values("NH-12T","FS-1","Concordia-1","FR-1","FRF-1","Desi, Chinese, Junk","FS-DI
 ("NH-12T","FS-4","Concordia-4","FR-4","FRF-4","Desi, Junk","FS-DID4","FS-FID4","FS-IMG4","FS-TID4"),
 ("NH-12T","FS-5","NSTP Cafe","FR-5","FRF-5","Desi, Chinese, Junk, Shakes, Juices","FS-DID5","FS-FID5","FS-IMG5","FS-TID5"),
 ("NH-12T","FS-6","Retro Cafe","FR-6","FRF-6","Desi, Chinese, Junk, Slush, Shakes, Juices","FS-DID6","FS-FID6","FS-IMG6","FS-TID6"),
-("NH-12T","FS-7","Library Cafe","FR-7","FRF-7","Desi, Snacks, Junk","FS-DID7","FS-FID7","FS-IMG7","FS-TID7");
+("NH-12T","FS-7","Library Cafe","FR-7","FRF-7","Desi, Snacks, Junk","FS-DID7","FS-FID7","FS-IMG7","FS-TID7"),
+("NH-12T","FS-8","Jinnah Mess","FR-8","FRF-8","Mixed","FS-DID8","FS-FID8","FS-IMG8","FS-TID8"),
+("NH-12T","FS-9","Sir Syed Mess","FR-9","FRF-9","Mixed","FS-DID9","FS-FID9","FS-IMG9","FS-TID9"),
+("NH-12T","FS-10","Iqbal Mess","FR-10","FRF-10","Mixed","FS-DID10","FS-FID10","FS-IMG10","FS-TID10"),
+("NH-12T","FS-11","Bhittai Mess","FR-11","FRF-11","Mixed","FS-DID11","FS-FID11","FS-IMG11","FS-TID11");
+
+
+insert into keylocations(KeyLocation_ID,KeyLocation_Campus_code,KeyLocation_name,KeyLocation_type,KeyLocation_description_ID,KeyLocation_facilities_ID,KeyLocation_image_ID)
+values("KL-1","NH-12T","NUST Medical  Centre","Hospital","KL-DID1","KL-FID1","KL-IMG1"),
+("KL-2","NH-12T","NUST Central Library","Library","KL-DID2","KL-FID2","KL-IMG2"),
+("KL-3","NH-12T","NUST Main  Office","Office","KL-DID3","KL-FID3","KL-IMG3"),
+("KL-4","NH-12T","NUST Exam Branch","Office","KL-DID4","KL-FID4","KL-IMG4"),
+("KL-5","NH-12T","NUST HR Branch","Office","KL-DID5","KL-FID5","KL-IMG5"),
+("KL-6","NH-12T","CIPS","Office","KL-DID6","KL-FID6","KL-IMG6"),
+("KL-7","NH-12T","Jinnah Auditorium","Auditorium","KL-DID7","KL-FID7","KL-IMG7"),
+("KL-8","NH-12T","NSTP","Offices","KL-DID8","KL-FID8","KL-IMG8"),
+("KL-9","NH-12T","C1 Tuck Shop","Mart","KL-DID9","KL-FID9","KL-IMG9"),
+("KL-10","NH-12T","C2 Tuck Shop","Mart","KL-DID10","KL-FID10","KL-IMG10"),
+("KL-11","NH-12T","C2 Gift Shop","Shop","KL-DID11","KL-FID11","KL-IMG11"),
+("KL-12","NH-12T","C2 Barber Shop","Salon","KL-DID12","KL-FID12","KL-IMG12"),
+("KL-13","NH-12T","C2 Tailor Shop","Shop","KL-DID13","KL-FID13","KL-IMG13"),
+("KL-14","NH-12T","C2 Stationary Shop","Shop","KL-DID14","KL-FID14","KL-IMG14"),
+("KL-15","NH-12T","C2 Photo Shop","Photo Shop","KL-DID15","KL-FID15","KL-IMG15"),
+("KL-16","NH-12T","Stationary Hub","Shop","KL-DID16","KL-FID16","KL-IMG16"),
+("KL-17","NH-12T","NUST Exam Hall","Hall","KL-DID17","KL-FID17","KL-IMG17"),
+("KL-18","NH-12T","Admin Branch","Office","KL-DID18","KL-FID18","KL-IMG18");
