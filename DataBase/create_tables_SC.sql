@@ -103,7 +103,7 @@ CREATE TABLE FoodSpots (
     FoodSpot_name VARCHAR(20) NOT NULL,
     FoodSpot_rating_ID VARCHAR(10),
     FoodSpot_Food_rating_ID VARCHAR(10),
-    FoodSpot_cuisineType VARCHAR(10),
+    FoodSpot_cuisineType VARCHAR(50),
     FoodSpot_description_ID VARCHAR(10),
     FoodSpot_facilities_ID VARCHAR(10),
     FoodSpot_image_ID VARCHAR(10) NOT NULL,

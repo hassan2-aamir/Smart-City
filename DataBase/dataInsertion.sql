@@ -69,3 +69,13 @@ values("RS-1","NH-12T","Old GYM","RS-DID1","RS-FID1","RS-IMG1"),
 ("RS-21","NH-12T","HBL Cricket Ground","RS-DID21","RS-FID21","RS-IMG21"),
 ("RS-22","NH-12T","SNS Ground","RS-DID22","RS-FID22","RS-IMG22"),
 ("RS-23","NH-12T","NICE Ground","RS-DID23","RS-FID23","RS-IMG23");
+
+
+insert into foodspots(foodspot_Campus_code,FoodSpot_ID,FoodSpot_name,FoodSpot_rating_ID,FoodSpot_Food_rating_ID,FoodSpot_cuisineType,FoodSpot_description_ID,FoodSpot_facilities_ID,FoodSpot_image_ID,FoodSpot_Timing_ID)
+values("NH-12T","FS-1","Concordia-1","FR-1","FRF-1","Desi, Chinese, Junk","FS-DID1","FS-FID1","FS-IMG1","FS-TID1"),
+("NH-12T","FS-2","Concordia-2","FR-2","FRF-2","Desi, Chinese, Junk, Shakes, Juices, Bakery","FS-DID2","FS-FID2","FS-IMG2","FS-TID2"),
+("NH-12T","FS-3","Concordia-3","FR-3","FRF-3","Desi, Chinese, Junk","FS-DID3","FS-FID3","FS-IMG3","FS-TID3"),
+("NH-12T","FS-4","Concordia-4","FR-4","FRF-4","Desi, Junk","FS-DID4","FS-FID4","FS-IMG4","FS-TID4"),
+("NH-12T","FS-5","NSTP Cafe","FR-5","FRF-5","Desi, Chinese, Junk, Shakes, Juices","FS-DID5","FS-FID5","FS-IMG5","FS-TID5"),
+("NH-12T","FS-6","Retro Cafe","FR-6","FRF-6","Desi, Chinese, Junk, Slush, Shakes, Juices","FS-DID6","FS-FID6","FS-IMG6","FS-TID6"),
+("NH-12T","FS-7","Library Cafe","FR-7","FRF-7","Desi, Snacks, Junk","FS-DID7","FS-FID7","FS-IMG7","FS-TID7");
