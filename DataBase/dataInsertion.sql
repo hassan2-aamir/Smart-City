@@ -1,3 +1,5 @@
+-- Data of NUST campuses  
+
 insert into campuses(Campus_code, Uni_name, Campus_name, Campus_address, Campus_image_ID, Campus_rating_ID)
 values("NH-12T","NUST","H-12","NUST H-12, Islamabad","N-1","T-1"),
 ("NCEME-12T","NUST","CEME","NUST CEME, Rawalpindi","NRw-2","T-2"),
@@ -6,6 +8,9 @@ values("NH-12T","NUST","H-12","NUST H-12, Islamabad","N-1","T-1"),
 ("NMCE-12T","NUST","MCE","NUST MCE, Risalpur","NRs-5","T-5"),
 ("NPNEC-12T","NUST","PNEC","NUST PNEC, Karachi","NK-6","T-6"),
 ("NNBC-12T","NUST","NBC","NUST NBC, Quetta","NQ-7","T-7");
+
+
+-- Data of NUST schools 
 
 insert into schools(School_ID, School_Campus_code, School_name, School_contact, School_description_ID, School_facilities_ID, School_image_ID) values
 ("HSEECS-12","NH-12T","SEECS","05190852400","SEECS-DID1","SEECS-FID1","NS-1"),
@@ -26,6 +31,9 @@ insert into schools(School_ID, School_Campus_code, School_name, School_contact, 
 ("HIAEC-12","NH-12T","IAEC",NULL,"IAEC-DID16","IAEC-FID16","NS-16"),
 ("HRIMS-12","NH-12T","RIMMS","051908526506","RIMS-DID17","RIMS-FID17","NS-17");
 
+
+-- Data of NUST hostels 
+
 insert into hostels(Hostel_ID,Hostel_Campus_code,Hostel_name,Hostel_rating_ID,Hostel_type,Hostel_description_ID,Hostel_facilities_ID,Hostel_image_ID,Hostel_curfewTiming_ID)
 values("GZL-H12","NH-12T","Ghazali Hostel","NH-1","UG-Male","NH-DID1","NH-FID1","NH-IMG1","NH-T1"),
 ("ZKR-H12","NH-12T","Zakariya Hostel","NH-2","UG-Male","NH-DID2","NH-FID2","NH-IMG2","NH-T2"),
@@ -44,6 +52,9 @@ values("GZL-H12","NH-12T","Ghazali Hostel","NH-1","UG-Male","NH-DID1","NH-FID1",
 ("AMN-H12","NH-12T","Amna Hostel","NH-15","UG-Female","NH-DID15","NH-FID15","NH-IMG15","NH-T15"),
 ("ZNB-H12","NH-12T","Zainab Hostel","NH-16","UG-Female","NH-DID16","NH-FID16","NH-IMG16","NH-T16"),
 ("FTM2-H12","NH-12T","Fatima Hostel-Block2","NH-17","PG-Female","NH-DID17","NH-FID1","NH-IMG17","NH-T17");
+
+
+-- Data of NUST recreational spots 
 
 insert into recreational_spots(Recreational_Spots_ID,Recreational_Spots_Campus_code,Recreational_Spots_name,Recreational_Spots_description_ID,Recreational_Spots_facilities_ID,Recreational_Spots_image_ID)
 values("RS-1","NH-12T","Old GYM","RS-DID1","RS-FID1","RS-IMG1"),
@@ -71,6 +82,8 @@ values("RS-1","NH-12T","Old GYM","RS-DID1","RS-FID1","RS-IMG1"),
 ("RS-23","NH-12T","NICE Ground","RS-DID23","RS-FID23","RS-IMG23");
 
 
+-- Data of NUST food points 
+
 insert into foodspots(foodspot_Campus_code,FoodSpot_ID,FoodSpot_name,FoodSpot_rating_ID,FoodSpot_Food_rating_ID,FoodSpot_cuisineType,FoodSpot_description_ID,FoodSpot_facilities_ID,FoodSpot_image_ID,FoodSpot_Timing_ID)
 values("NH-12T","FS-1","Concordia-1","FR-1","FRF-1","Desi, Chinese, Junk","FS-DID1","FS-FID1","FS-IMG1","FS-TID1"),
 ("NH-12T","FS-2","Concordia-2","FR-2","FRF-2","Desi, Chinese, Junk, Shakes, Juices, Bakery","FS-DID2","FS-FID2","FS-IMG2","FS-TID2"),
@@ -85,6 +98,8 @@ values("NH-12T","FS-1","Concordia-1","FR-1","FRF-1","Desi, Chinese, Junk","FS-DI
 ("NH-12T","FS-11","Bhittai Mess","FR-11","FRF-11","Mixed","FS-DID11","FS-FID11","FS-IMG11","FS-TID11");
 
 
+-- Data of NUST key locations
+ 
 insert into keylocations(KeyLocation_ID,KeyLocation_Campus_code,KeyLocation_name,KeyLocation_type,KeyLocation_description_ID,KeyLocation_facilities_ID,KeyLocation_image_ID)
 values("KL-1","NH-12T","NUST Medical  Centre","Hospital","KL-DID1","KL-FID1","KL-IMG1"),
 ("KL-2","NH-12T","NUST Central Library","Library","KL-DID2","KL-FID2","KL-IMG2"),
@@ -106,6 +121,8 @@ values("KL-1","NH-12T","NUST Medical  Centre","Hospital","KL-DID1","KL-FID1","KL
 ("KL-18","NH-12T","Admin Branch","Office","KL-DID18","KL-FID18","KL-IMG18");
 
 
+-- Data of desciptions NUST key locations, food points, schools
+ 
 insert into descriptions(Description_ID,Description_text)values
 ("SEECS-DID1","School of Electrical Engineering and Computer Sciences"),
 ("SMME-DID2","School of Mechanical and Manufacturing Engineering"),
@@ -194,6 +211,8 @@ insert into descriptions(Description_ID,Description_text)values
 ("KL-DID17","Exam hall"),
 ("KL-DID18","Admin office");
 
+
+-- Data of NUST hostels, locations timing 
 insert into times(Time_ID, Opening_time, Closing_time)values
 ("FS-TID1","09:00:00","22:00:00"),
 ("FS-TID2","09:00:00","22:00:00"),
@@ -223,6 +242,8 @@ insert into times(Time_ID, Opening_time, Closing_time)values
 ("NH-T16","22:00:00","05:00:00"),
 ("NH-T17","22:00:00","05:00:00");
 
+
+-- Data of ratings of different NUST places 
 insert into ratings(Rating_ID, Rating)values
 ("T-1",9.0),
 ("T-2",8.5),
@@ -270,6 +291,9 @@ insert into ratings(Rating_ID, Rating)values
 ("FRF-9",5.5),
 ("FRF-10",5.7),
 ("FRF-11",5.3);
+
+
+-- Data of faclities offered in different NUST places
 
 insert into facilities(Facility_ID,Facilities) values
 ("SEECS-FID1","offers Electrical, Software engineerings, Computer Science, Data Science, Artificial Intelligence, Information Technlogy, Information Security and Innovative Technologies in Learning programs"),
