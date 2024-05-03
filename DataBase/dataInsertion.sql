@@ -216,6 +216,7 @@ insert into descriptions(Description_ID,Description_text)values
 insert into times(Time_ID, Opening_time, Closing_time)values
 ("FS-TID1","09:00:00","22:00:00"),
 ("FS-TID2","09:00:00","22:00:00"),
+("FS-TID3","09:00:00","22:00:00"),
 ("FS-TID4","09:00:00","22:00:00"),
 ("FS-TID5","09:00:00","22:00:00"),
 ("FS-TID6","08:00:00","23:00:00"),
