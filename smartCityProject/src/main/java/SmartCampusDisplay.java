@@ -145,12 +145,14 @@ class Hostel extends Landmark {
 class FoodSpot extends Landmark {
     private String cuisineType;
     private String foodRating;
+    private String timing;
 
     public FoodSpot(String id, String name, String description, String facilities, String imagePath,
-                    String cuisineType, String foodRating) {
+                    String cuisineType, String foodRating,String Timing) {
         super(id, name, description, facilities, imagePath);
         this.cuisineType = cuisineType;
         this.foodRating = foodRating;
+        this.timing = Timing;
     }
 
     public String getCuisineType() {
@@ -160,6 +162,11 @@ class FoodSpot extends Landmark {
     public String getFoodRating() {
         return foodRating;
     }
+
+    public String getTiming() {
+        return timing;
+    }
+    
 }
 
 
@@ -281,6 +288,47 @@ static RecreationalSpot recreationalSpotAction(String recreationalSpotId) {
     // Create and return a RecreationalSpot object
     return new RecreationalSpot(recreationalSpotId, recreationalSpotsName, description, facilities, imagePath, String.valueOf(rating));
 }
+static FoodSpot foodSpotAction(String foodSpotId) {
+    String foodSpotCampusCode = "";
+    String foodSpotName = "";
+    String description = "";
+    String facilities = "";
+    String imagePath = "";
+    double rating = 0.0;
+    String cuisineType = "";
+    String openingTime = "";
+    String closingTime = "";
+
+    try (Connection connection = getConnection()) {
+        if (connection != null) {
+            String query = "SELECT * FROM foodspots WHERE FoodSpot_ID = '" + foodSpotId + "'";
+            try (Statement statement = connection.createStatement();
+                 ResultSet resultSet = statement.executeQuery(query)) {
+                // Process the ResultSet
+                while (resultSet.next()) {
+                    foodSpotCampusCode = resultSet.getString("FoodSpot_Campus_code");
+                    foodSpotName = resultSet.getString("FoodSpot_name");
+                    description = resultSet.getString("Description");
+                    facilities = resultSet.getString("Facilities");
+                    imagePath = resultSet.getString("Image_path");
+                    rating = resultSet.getDouble("Rating");
+                    cuisineType = resultSet.getString("CuisineType");
+                    openingTime = resultSet.getString("Opening_time");
+                    closingTime = resultSet.getString("Closing_time");
+                }
+            } catch (SQLException e) {
+                System.err.println("Error executing query: " + e.getMessage());
+            }
+        }
+    } catch (SQLException e) {
+        System.err.println("Error connecting to the database: " + e.getMessage());
+    }
+    
+    // Create and return a FoodSpot object
+    String timing = openingTime + " to " + closingTime;
+    return new FoodSpot(foodSpotId, foodSpotName, description, facilities, imagePath, cuisineType, String.valueOf(rating), timing);
+}
+
 
 
     /*public static KeyLocation keyLocationAction(String id){
@@ -345,6 +393,19 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private void clickRecreationalSpot(String id){
         RecreationalSpot thisRecreationalSpot = Actions.recreationalSpotAction(id);
         openRecreationalSpotForm(thisRecreationalSpot.getImagePath(),thisRecreationalSpot.getName(),thisRecreationalSpot.getDescription(),thisRecreationalSpot.getFacilities(),thisRecreationalSpot.getRating());
+    }
+    
+    private void openFoodSpotForm(String imagePath,String title, String description,String facilities,String cuisine,String rating,String timing){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FoodSpots(imagePath,title,description,facilities,cuisine,rating,timing).setVisible(true);
+            }
+        });
+    }
+    
+    private void clickFoodSpot(String id){
+        FoodSpot thisFoodSpot = Actions.foodSpotAction(id);
+        openFoodSpotForm(thisFoodSpot.getImagePath(),thisFoodSpot.getName(),thisFoodSpot.getDescription(),thisFoodSpot.getFacilities(),thisFoodSpot.getCuisineType(),thisFoodSpot.getFoodRating(),thisFoodSpot.getTiming());
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -433,6 +494,9 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton80 = new MyButton();
         myButton81 = new MyButton();
         myButton82 = new MyButton();
+        myButton83 = new MyButton();
+        myButton84 = new MyButton();
+        myButton85 = new MyButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -444,7 +508,12 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton2.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton2.setBorderPainted(false);
         myButton2.setRadius(20);
-        getContentPane().add(myButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 30, 30));
+        myButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 30, 30));
 
         myButton5.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton5.setBorderPainted(false);
@@ -524,7 +593,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton15.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton15.setBorderPainted(false);
         myButton15.setRadius(20);
-        getContentPane().add(myButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 230, 30, 30));
+        getContentPane().add(myButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 30, 30));
 
         myButton16.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton16.setBorderPainted(false);
@@ -584,6 +653,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton22.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton22.setBorderPainted(false);
         myButton22.setRadius(20);
+        myButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton22ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 30, 30));
 
         myButton23.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -674,6 +748,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton34.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton34.setBorderPainted(false);
         myButton34.setRadius(20);
+        myButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton34ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 30, 30));
 
         myButton35.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -714,7 +793,12 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton40.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton40.setBorderPainted(false);
         myButton40.setRadius(20);
-        getContentPane().add(myButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 30, 30));
+        myButton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton40ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 20, 20));
 
         myButton41.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton41.setBorderPainted(false);
@@ -734,7 +818,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton42ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 30, 30));
+        getContentPane().add(myButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 20, 20));
 
         myButton43.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton43.setBorderPainted(false);
@@ -774,7 +858,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton46ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 30, 30));
+        getContentPane().add(myButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 30, 30));
 
         myButton47.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton47.setBorderPainted(false);
@@ -849,11 +933,21 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton55.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton55.setBorderPainted(false);
         myButton55.setRadius(20);
+        myButton55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton55ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 30, 30));
 
         myButton56.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton56.setBorderPainted(false);
         myButton56.setRadius(20);
+        myButton56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton56ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, 30, 30));
 
         myButton57.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -1116,6 +1210,36 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         });
         getContentPane().add(myButton82, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 30, 30));
 
+        myButton83.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        myButton83.setBorderPainted(false);
+        myButton83.setRadius(20);
+        myButton83.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton83ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton83, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 260, 20, 20));
+
+        myButton84.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        myButton84.setBorderPainted(false);
+        myButton84.setRadius(20);
+        myButton84.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton84ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton84, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 20, 20));
+
+        myButton85.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        myButton85.setBorderPainted(false);
+        myButton85.setRadius(20);
+        myButton85.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton85ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton85, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 20, 20));
+
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Screenshot 2024-04-21 183638.png")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -230, 1920, 1080));
 
@@ -1339,6 +1463,42 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private void myButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton42ActionPerformed
         clickRecreationalSpot("RS-23");// TODO add your handling code here:
     }//GEN-LAST:event_myButton42ActionPerformed
+
+    private void myButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton22ActionPerformed
+        clickFoodSpot("FS-1");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton22ActionPerformed
+
+    private void myButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton34ActionPerformed
+        clickFoodSpot("FS-2");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton34ActionPerformed
+
+    private void myButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton56ActionPerformed
+        clickFoodSpot("FS-3");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton56ActionPerformed
+
+    private void myButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton2ActionPerformed
+        clickFoodSpot("FS-4");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton2ActionPerformed
+
+    private void myButton83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton83ActionPerformed
+        clickFoodSpot("FS-5");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton83ActionPerformed
+
+    private void myButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton55ActionPerformed
+        clickFoodSpot("FS-6");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton55ActionPerformed
+
+    private void myButton84ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton84ActionPerformed
+        clickFoodSpot("FS-7");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton84ActionPerformed
+
+    private void myButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton40ActionPerformed
+        clickFoodSpot("FS-11");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton40ActionPerformed
+
+    private void myButton85ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton85ActionPerformed
+        clickFoodSpot("FS-11");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton85ActionPerformed
     
     
     /**
@@ -1461,6 +1621,9 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private MyButton myButton80;
     private MyButton myButton81;
     private MyButton myButton82;
+    private MyButton myButton83;
+    private MyButton myButton84;
+    private MyButton myButton85;
     private MyButton myButton9;
     // End of variables declaration//GEN-END:variables
 }

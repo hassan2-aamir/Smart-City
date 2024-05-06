@@ -20,7 +20,7 @@ public class FoodSpots extends javax.swing.JFrame {
     /**
      * Creates new form FoodSpots
      */
-    public FoodSpots(String imagePath,String title, String description,String facilities,String cuisine,int rating,String timing) {
+    public FoodSpots(String imagePath,String title, String description,String facilities,String cuisine,String rating,String timing) {
         
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         initComponents();
@@ -116,7 +116,6 @@ public class FoodSpots extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -135,7 +134,7 @@ public class FoodSpots extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Timings");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,13 +154,15 @@ public class FoodSpots extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Cuisine");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 250, -1));
 
         jLabel10.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Timings");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 190, -1));
 
         jLabel11.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -230,7 +231,7 @@ public class FoodSpots extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FoodSpots("C:\\Users\\hp\\Desktop\\download.jpg","Phood","hello","nothing here","Chinese",5,"10 - 12").setVisible(true);
+                new FoodSpots("C:\\Users\\hp\\Desktop\\download.jpg","Phood","hello","nothing here","Chinese","5.0","10 - 12").setVisible(true);
             }
         });
     }
