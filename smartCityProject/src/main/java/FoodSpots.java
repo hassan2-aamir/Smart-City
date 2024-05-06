@@ -116,7 +116,7 @@ public class FoodSpots extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

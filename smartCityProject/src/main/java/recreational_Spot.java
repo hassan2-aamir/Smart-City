@@ -15,12 +15,12 @@ import javax.swing.JFrame;
  *
  * @author hp
  */
-public class recreationalSpot extends javax.swing.JFrame {
+public class recreational_Spot extends javax.swing.JFrame {
 
     /**
      * Creates new form recreationalSpot
      */
-    public recreationalSpot(String imagePath,String title, String description,String facilities) {
+    public recreational_Spot(String imagePath,String title, String description,String facilities,String rating) {
         
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         initComponents();
@@ -28,6 +28,7 @@ public class recreationalSpot extends javax.swing.JFrame {
         loadtext(description,jLabel6);
         loadtext(facilities,jLabel8);
         loadtext(title,jLabel3);
+        loadtext(rating,jLabel10);
     }
     public static String formatString(String input) {
         // Split the input string into words
@@ -105,6 +106,9 @@ public class recreationalSpot extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         
 
@@ -118,10 +122,10 @@ public class recreationalSpot extends javax.swing.JFrame {
         jLabel3.setText("title");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 190, 55));
 
-        jLabel4.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Description");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 105, 121, 35));
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel4.setText("⭐");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 40, 35));
 
         jLabel5.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -139,6 +143,20 @@ public class recreationalSpot extends javax.swing.JFrame {
         jLabel8.setText("jLabel6");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 353, 407, 103));
+
+        jLabel7.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Description");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 105, 121, 35));
+
+        jLabel9.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Rating");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 60, 35));
+
+        jLabel10.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 40, 35));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,31 +199,34 @@ public class recreationalSpot extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(recreationalSpot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(recreational_Spot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(recreationalSpot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(recreational_Spot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(recreationalSpot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(recreational_Spot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(recreationalSpot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(recreational_Spot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new recreationalSpot("C:\\Users\\hp\\Desktop\\download.jpg","Sports Complex","Holalalala","kuch nahi").setVisible(true);
+                new recreational_Spot("C:\\Users\\hp\\Desktop\\download.jpg","Sports Complex","Holalalala","kuch nahi","4.9").setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
