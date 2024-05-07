@@ -329,6 +329,41 @@ static FoodSpot foodSpotAction(String foodSpotId) {
     return new FoodSpot(foodSpotId, foodSpotName, description, facilities, imagePath, cuisineType, String.valueOf(rating), timing);
 }
 
+static KeyLocation keyLocationAction(String keyLocationId) {
+    String keyLocationCampusCode = "";
+    String keyLocationName = "";
+    String description = "";
+    String facilities = "";
+    String imagePath = "";
+    String type = "";
+
+    try (Connection connection = getConnection()) {
+        if (connection != null) {
+            String query = "SELECT * FROM keylocations WHERE KeyLocation_ID = '" + keyLocationId + "'";
+            try (Statement statement = connection.createStatement();
+                 ResultSet resultSet = statement.executeQuery(query)) {
+                // Process the ResultSet
+                while (resultSet.next()) {
+                    keyLocationCampusCode = resultSet.getString("KeyLocation_Campus_code");
+                    keyLocationName = resultSet.getString("KeyLocation_name");
+                    description = resultSet.getString("Description");
+                    facilities = resultSet.getString("Facilities");
+                    imagePath = resultSet.getString("Image_path");
+                    type = resultSet.getString("KeyLocation_type");
+                }
+            } catch (SQLException e) {
+                System.err.println("Error executing query: " + e.getMessage());
+            }
+        }
+    } catch (SQLException e) {
+        System.err.println("Error connecting to the database: " + e.getMessage());
+    }
+    
+    // Create and return a KeyLocation object
+    return new KeyLocation(keyLocationId, keyLocationName, description, facilities, imagePath, type);
+}
+
+
 
 
     /*public static KeyLocation keyLocationAction(String id){
@@ -408,6 +443,20 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         openFoodSpotForm(thisFoodSpot.getImagePath(),thisFoodSpot.getName(),thisFoodSpot.getDescription(),thisFoodSpot.getFacilities(),thisFoodSpot.getCuisineType(),thisFoodSpot.getFoodRating(),thisFoodSpot.getTiming());
     }
     
+    private void openKeyLocationForm(String imagePath,String title, String description,String facilities,String type){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new keyLocation(imagePath, title,  description, facilities,type).setVisible(true);
+            }
+        });
+    }
+
+    private void clickKeyLocation(String id){
+        KeyLocation thiskeyLocation = Actions.keyLocationAction(id);
+        openKeyLocationForm(thiskeyLocation.getImagePath(),thiskeyLocation.getName(),thiskeyLocation.getDescription(),thiskeyLocation.getFacilities(),thiskeyLocation.getKeyLocationType());
+    }
+
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

@@ -30,7 +30,7 @@ CREATE TABLE KeyLocations (
     Description TEXT, 
     Facilities TEXT,
     Image_path VARCHAR(500) NOT NULL, 
-    Rating DECIMAL(2,1), 
+  
     
     CONSTRAINT KeyLocation_ID_PK PRIMARY KEY (KeyLocation_ID)
 );
@@ -67,10 +67,12 @@ CREATE TABLE FoodSpots (
     FoodSpot_ID VARCHAR(20),
     FoodSpot_Campus_code VARCHAR(10) NOT NULL,
     FoodSpot_name VARCHAR(20) NOT NULL,
+    Rating DECIMAL(2,1), 
     CuisineType VARCHAR(10),
     Description TEXT, 
     Facilities TEXT, 
     Image_path VARCHAR(500) NOT NULL, 
-    Rating DECIMAL(2,1), 
+    Opening_time varchar(6) ,
+	Closing_time varchar(6),
     CONSTRAINT FoodSpot_ID_PK PRIMARY KEY (FoodSpot_ID)
 );
