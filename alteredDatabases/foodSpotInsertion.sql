@@ -10,4 +10,5 @@ VALUES
 ("NH-12T", "FS-8", "Jinnah Mess", 4.8, "Mixed", "Mess for faculty", "Mess Food", "C:\\Users\\hp\\Documents\\Images\\Jinnah-Mess.jpeg", "09:00", "21:30"),
 ("NH-12T", "FS-9", "Sir Syed Mess", 4.7, "Mixed", "Mess for faculty", "Mess Food", "C:\\Users\\hp\\Documents\\Images\\Sir-Syed-Mess.jpeg", "09:00", "21:30"),
 ("NH-12T", "FS-10", "Iqbal Mess", 4.9, "Mixed", "Mess for faculty", "Mess Food", "C:\\Users\\hp\\Documents\\Images\\Iqbal-Mess.jpeg", "09:00", "21:30"),
-("NH-12T", "FS-11", "Bhittai Mess", 4.4, "Mixed", "Mess for faculty", "Mess Food", "C:\\Users\\hp\\Documents\\Images\\Bhittai-Mess.jpeg", "09:00", "22:00");
+("NH-12T", "FS-11", "Bhittai Mess", 4.4, "Mixed", "Mess for faculty", "Mess Food", "C:\\Users\\hp\\Documents\\Images\\Bhittai-Mess.jpeg", "09:00", "22:00"),
+("NH-12T", "FS-12", "Coffee Lounge", 4.4, "Beverages", "Coffee Bar", "Coffee, Chai, Bakery items etc.", "IMAGE PATH", "09:00", "22:00");
