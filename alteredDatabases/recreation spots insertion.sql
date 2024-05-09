@@ -21,4 +21,6 @@ insert into recreational_spots values
 ("RS-20","NH-12T","HBL Futsal Ground","Sports ground","Sports ground","C:\\Users\\hp\\Documents\\Images\\HBLFutsalGround.jpeg", 4.5),
 ("RS-21","NH-12T","HBL Cricket Ground","Sports ground","Sports ground","C:\\Users\\hp\\Documents\\Images\\HBLCricketGround.jpeg", 4.1),
 ("RS-22","NH-12T","SNS Ground","School ground","School ground","C:\\Users\\hp\\Documents\\Images\\SNSGround.jpeg", 4.2),
-("RS-23","NH-12T","NICE Ground","School ground","School ground","C:\\Users\\hp\\Documents\\Images\\NICEGround.jpeg", 4.0);
+("RS-23","NH-12T","NICE Ground","School ground","School ground","C:\\Users\\hp\\Documents\\Images\\NICEGround.jpeg", 4.0),
+("RS-24","NH-12T","Squash Court","Sports club","Proper Area for squash","IMAGE PATH", 3.7);
+("RS-24","NH-12T","SCME Ground","Sports and events helding area","School ground","IMAGE PATH", 4.7);
