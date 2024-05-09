@@ -446,7 +446,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private void openKeyLocationForm(String imagePath,String title, String description,String facilities,String type){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new keyLocation(imagePath, title,  description, facilities,type).setVisible(true);
+                new key_Location(imagePath, title,  description, facilities,type).setVisible(true);
             }
         });
     }
@@ -513,7 +513,6 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton51 = new MyButton();
         myButton52 = new MyButton();
         myButton53 = new MyButton();
-        myButton54 = new MyButton();
         myButton55 = new MyButton();
         myButton56 = new MyButton();
         myButton57 = new MyButton();
@@ -546,6 +545,8 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton83 = new MyButton();
         myButton84 = new MyButton();
         myButton85 = new MyButton();
+        myButton86 = new MyButton();
+        myButton87 = new MyButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -562,7 +563,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 30, 30));
+        getContentPane().add(myButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 20, 20));
 
         myButton5.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton5.setBorderPainted(false);
@@ -607,7 +608,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 30, 30));
+        getContentPane().add(myButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 20, 20));
 
         myButton4.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton4.setBorderPainted(false);
@@ -627,6 +628,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton13.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton13.setBorderPainted(false);
         myButton13.setRadius(20);
+        myButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton13ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, 30, 30));
 
         myButton14.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -642,6 +648,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton15.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton15.setBorderPainted(false);
         myButton15.setRadius(20);
+        myButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton15ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 30, 30));
 
         myButton16.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -672,7 +683,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton18ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 240, 30, 30));
+        getContentPane().add(myButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 30, 30));
 
         myButton19.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton19.setBorderPainted(false);
@@ -682,12 +693,12 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton19ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 30, 30));
+        getContentPane().add(myButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 220, 30, 30));
 
         myButton20.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton20.setBorderPainted(false);
         myButton20.setRadius(20);
-        getContentPane().add(myButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, 30, 30));
+        getContentPane().add(myButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 20, 20));
 
         myButton21.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton21.setBorderPainted(false);
@@ -777,21 +788,41 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton30.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton30.setBorderPainted(false);
         myButton30.setRadius(20);
+        myButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton30ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 30, 30));
 
         myButton31.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton31.setBorderPainted(false);
         myButton31.setRadius(20);
+        myButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton31ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 30, 30));
 
         myButton32.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton32.setBorderPainted(false);
         myButton32.setRadius(20);
+        myButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton32ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 30, 30));
 
         myButton33.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton33.setBorderPainted(false);
         myButton33.setRadius(20);
+        myButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton33ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 30, 30));
 
         myButton34.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -812,6 +843,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton36.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton36.setBorderPainted(false);
         myButton36.setRadius(20);
+        myButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton36ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 30, 30));
 
         myButton37.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -822,7 +858,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton37ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 30, 30));
+        getContentPane().add(myButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 30, 30));
 
         myButton38.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton38.setBorderPainted(false);
@@ -837,7 +873,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton39ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 30, 30));
+        getContentPane().add(myButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 30, 30));
 
         myButton40.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton40.setBorderPainted(false);
@@ -847,7 +883,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton40ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 20, 20));
+        getContentPane().add(myButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 30, 30));
 
         myButton41.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton41.setBorderPainted(false);
@@ -857,7 +893,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton41ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 30, 30));
+        getContentPane().add(myButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 30, 30));
 
         myButton42.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton42.setBorderPainted(false);
@@ -877,7 +913,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton43ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 30, 30));
+        getContentPane().add(myButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 30, 30));
 
         myButton44.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton44.setBorderPainted(false);
@@ -952,7 +988,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton51ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 30, 30));
+        getContentPane().add(myButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 30, 30));
 
         myButton52.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton52.setBorderPainted(false);
@@ -962,7 +998,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton52ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 30, 30));
+        getContentPane().add(myButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 20, 20));
 
         myButton53.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton53.setBorderPainted(false);
@@ -972,12 +1008,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton53ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 30, 30));
-
-        myButton54.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
-        myButton54.setBorderPainted(false);
-        myButton54.setRadius(20);
-        getContentPane().add(myButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 210, -1, 30));
+        getContentPane().add(myButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 20, 20));
 
         myButton55.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton55.setBorderPainted(false);
@@ -987,7 +1018,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton55ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 30, 30));
+        getContentPane().add(myButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 20, 20));
 
         myButton56.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton56.setBorderPainted(false);
@@ -1017,7 +1048,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton61ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 30, 30));
+        getContentPane().add(myButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 20, 20));
 
         myButton62.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton62.setBorderPainted(false);
@@ -1037,7 +1068,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton63ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 30, 30));
+        getContentPane().add(myButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 20, 20));
 
         myButton64.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton64.setBorderPainted(false);
@@ -1047,7 +1078,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton64ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 30, 30));
+        getContentPane().add(myButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 20, 20));
 
         myButton66.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton66.setBorderPainted(false);
@@ -1057,7 +1088,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton66ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton66, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 30, 30));
+        getContentPane().add(myButton66, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 430, 20, 20));
 
         myButton67.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton67.setBorderPainted(false);
@@ -1092,7 +1123,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton70ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton70, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 30, 30));
+        getContentPane().add(myButton70, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 20, 20));
 
         myButton65.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton65.setBorderPainted(false);
@@ -1102,7 +1133,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton65ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton65, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 30, 30));
+        getContentPane().add(myButton65, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 20, 20));
 
         myButton71.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton71.setBorderPainted(false);
@@ -1167,7 +1198,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 30, 30));
+        getContentPane().add(myButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 20, 20));
 
         myButton58.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton58.setBorderPainted(false);
@@ -1177,7 +1208,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton58ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 30, 30));
+        getContentPane().add(myButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 20, 20));
 
         myButton76.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton76.setBorderPainted(false);
@@ -1187,7 +1218,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton76ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton76, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 30, 30));
+        getContentPane().add(myButton76, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 20, 20));
 
         myButton60.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton60.setBorderPainted(false);
@@ -1197,7 +1228,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton60ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 30, 30));
+        getContentPane().add(myButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 20, 20));
 
         myButton77.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton77.setBorderPainted(false);
@@ -1207,7 +1238,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton77ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton77, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 30, 30));
+        getContentPane().add(myButton77, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 20, 20));
 
         myButton78.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton78.setBorderPainted(false);
@@ -1217,7 +1248,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton78ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton78, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, 30, 30));
+        getContentPane().add(myButton78, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 20, 20));
 
         myButton79.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton79.setBorderPainted(false);
@@ -1227,7 +1258,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton79ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton79, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 30, 30));
+        getContentPane().add(myButton79, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 20, 20));
 
         myButton80.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton80.setBorderPainted(false);
@@ -1237,7 +1268,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton80ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton80, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 30, 30));
+        getContentPane().add(myButton80, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 20, 20));
 
         myButton81.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton81.setBorderPainted(false);
@@ -1247,7 +1278,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton81ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton81, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 30, 30));
+        getContentPane().add(myButton81, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 20, 20));
 
         myButton82.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton82.setBorderPainted(false);
@@ -1257,7 +1288,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
                 myButton82ActionPerformed(evt);
             }
         });
-        getContentPane().add(myButton82, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 30, 30));
+        getContentPane().add(myButton82, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 20, 20));
 
         myButton83.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton83.setBorderPainted(false);
@@ -1288,6 +1319,26 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
             }
         });
         getContentPane().add(myButton85, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 20, 20));
+
+        myButton86.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        myButton86.setBorderPainted(false);
+        myButton86.setRadius(20);
+        myButton86.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton86ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton86, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 20, 20));
+
+        myButton87.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        myButton87.setBorderPainted(false);
+        myButton87.setRadius(20);
+        myButton87.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton87ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton87, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 30, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Screenshot 2024-04-21 183638.png")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -230, 1920, 1080));
@@ -1548,6 +1599,42 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private void myButton85ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton85ActionPerformed
         clickFoodSpot("FS-11");// TODO add your handling code here:
     }//GEN-LAST:event_myButton85ActionPerformed
+
+    private void myButton86ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton86ActionPerformed
+        clickKeyLocation("KL-17");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton86ActionPerformed
+
+    private void myButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton30ActionPerformed
+        clickKeyLocation("KL-6");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton30ActionPerformed
+
+    private void myButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton13ActionPerformed
+        clickKeyLocation("KL-1");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton13ActionPerformed
+
+    private void myButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton33ActionPerformed
+        clickKeyLocation("KL-2");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton33ActionPerformed
+
+    private void myButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton32ActionPerformed
+        clickKeyLocation("KL-3");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton32ActionPerformed
+
+    private void myButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton31ActionPerformed
+        clickKeyLocation("KL-7");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton31ActionPerformed
+
+    private void myButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton15ActionPerformed
+        clickKeyLocation("KL-8");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton15ActionPerformed
+
+    private void myButton87ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton87ActionPerformed
+        clickKeyLocation("KL-16");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton87ActionPerformed
+
+    private void myButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton36ActionPerformed
+        clickKeyLocation("KL-18");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton36ActionPerformed
     
     
     /**
@@ -1638,7 +1725,6 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private MyButton myButton51;
     private MyButton myButton52;
     private MyButton myButton53;
-    private MyButton myButton54;
     private MyButton myButton55;
     private MyButton myButton56;
     private MyButton myButton57;
@@ -1673,6 +1759,8 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private MyButton myButton83;
     private MyButton myButton84;
     private MyButton myButton85;
+    private MyButton myButton86;
+    private MyButton myButton87;
     private MyButton myButton9;
     // End of variables declaration//GEN-END:variables
 }

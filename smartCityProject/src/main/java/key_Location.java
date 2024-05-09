@@ -15,12 +15,12 @@ import javax.swing.JFrame;
  *
  * @author hp
  */
-public class keyLocation extends javax.swing.JFrame {
+public class key_Location extends javax.swing.JFrame {
 
     /**
      * Creates new form keyLocation
      */
-    public keyLocation(String imagePath,String title, String description,String facilities,String type) {
+    public key_Location(String imagePath,String title, String description,String facilities,String type) {
         
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         initComponents();
@@ -117,29 +117,35 @@ public class keyLocation extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("School");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 200, 55));
 
         jLabel4.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel4.setText("Description");
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 105, 121, 35));
 
         jLabel5.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel5.setText("Facilities");
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 306, 121, 35));
 
         jLabel6.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel6.setText("jLabel6");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 146, 381, 154));
 
         jLabel7.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("jLabel6");
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 174, 37));
 
         jLabel8.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jLabel8.setText("jLabel6");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 353, 407, 103));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,20 +189,20 @@ public class keyLocation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(keyLocation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(key_Location.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(keyLocation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(key_Location.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(keyLocation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(key_Location.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(keyLocation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(key_Location.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new keyLocation("C:\\Users\\hp\\Desktop\\download.jpg","Rahmat Masjid","Holalalala","kuch nahi","Mosque").setVisible(true);
+                new key_Location("C:\\Users\\hp\\Desktop\\download.jpg","Rahmat Masjid","Holalalala","kuch nahi","Mosque").setVisible(true);
             }
         });
     }
