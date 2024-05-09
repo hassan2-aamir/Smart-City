@@ -30,4 +30,5 @@ values
 ("KL-28","NH-12","NUST Creative Learning School and College","Learning Institute","School and College for students","Well-furnished furniture, Security, Well-educated Faculty, Sports Area etc.","IMAGE-PATH"),
 ("KL-29","NH-12","Isra Apartments","Residential Area","Block of Flats","GYM, Prayer Area, Mess, Laundry, Badminton court, Table Tennis, Vending Machine, Electric Oven and Iron, Internet facility, Radiator Heating System, TV Room","IMAGE-PATH"),
 ("KL-30","NH-12","Masjid-e-Taqwa","Mosque","Worship Area","Peace, Ablution Area, Security etc.","IMAGE-PATH"),
-("KL-31","NH-12","Ibrar Cash & Carry","Mart","Grocery Store","All grocery items available","IMAGE-PATH");
+("KL-31","NH-12","Ibrar Cash & Carry","Mart","Grocery Store","All grocery items available","IMAGE-PATH"),
+("KL-32","NH-12","Gate-10","University Gate","Enterance and exit","Security, Entry on enterance etc.","IMAGE-PATH");
