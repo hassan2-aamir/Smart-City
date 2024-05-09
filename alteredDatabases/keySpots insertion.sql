@@ -17,4 +17,17 @@ values
 ("KL-15","NH-12T","C2 Photo Shop","Photo Shop","Photography","Photography","C:\\Users\\hp\\Documents\\Images\\C2 Photo Shop.jpeg"),
 ("KL-16","NH-12T","Stationary Hub","Shop","Stationary, Photocopies","Stationary, Photocopies","C:\\Users\\hp\\Documents\\Images\\Stationary Hub.jpeg"),
 ("KL-17","NH-12T","NUST Exam Hall","Hall","FirstAid medicare, Water, Tiolets","FirstAid medicare, Water, Tiolets","C:\\Users\\hp\\Documents\\Images\\NUST Exam Hall.jpeg"),
-("KL-18","NH-12T","Admin Branch","Office","HBL Bank, Alumni Office, Pakistan Post, Admin Block","HBL Bank, Alumni Office, Pakistan Post, Admin Block","C:\\Users\\hp\\Documents\\Images\\Admin Branch.jpeg");
+("KL-18","NH-12T","Admin Branch","Office","HBL Bank, Alumni Office, Pakistan Post, Admin Block","HBL Bank, Alumni Office, Pakistan Post, Admin Block","C:\\Users\\hp\\Documents\\Images\\Admin Branch.jpeg"),
+("KL-19","NH-12","Gate-1","University Gate","Main enterance and exit","Security, Entry on enterance etc.","IMAGE-PATH"),
+("KL-20","NH-12","Gate-2","University Gate","Enterance and exit","Security, Entry on enterance etc.","IMAGE-PATH"),
+("KL-21","NH-12","Gate-4","University Gate","Enterance and exit","Security, Entry on enterance, For DayScholars and NET students etc.","IMAGE-PATH"),
+("KL-22","NH-12","NHT","Medical equipment manufacturer","N-oative Health Technologies","State-of-the-art medical device manufacturing facility, working in research and development of healthcare technologies as well as mass production of life-saving medical devices etc.","IMAGE-PATH"),
+("KL-23","NH-12","NCAI","Research Institute","National Center of Artificial Intelligence","Hub of Innovation, Scientific Research, Training area","IMAGE-PATH"),
+("KL-24","NH-12","HBL Bank","Bank","Habib Bank Limited NUST Branch","Financial assistance, Account holding, Security etc.","IMAGE-PATH"),
+("KL-25","NH-12","Askari Bank","Bank","Askari Bank Limited NUST Branch","Financial assistance, Account holding, Security etc.","IMAGE-PATH"),
+("KL-26","NH-12","Masjid-e-Rahmat","Mosque","Worship Area","Peace, Ablution Area, Security etc.","IMAGE-PATH"),
+("KL-27","NH-12","Iqra apartments","Residential area","Residential area for Married students","GYM, Prayer Area, Mess, Laundry, Badminton court, Table Tennis, Vending Machine, Electric Oven and Iron, Internet facility, Radiator Heating System, TV Room","IMAGE-PATH"),
+("KL-28","NH-12","NUST Creative Learning School and College","Learning Institute","School and College for students","Well-furnished furniture, Security, Well-educated Faculty, Sports Area etc.","IMAGE-PATH"),
+("KL-29","NH-12","Isra Apartments","Residential Area","Block of Flats","GYM, Prayer Area, Mess, Laundry, Badminton court, Table Tennis, Vending Machine, Electric Oven and Iron, Internet facility, Radiator Heating System, TV Room","IMAGE-PATH"),
+("KL-30","NH-12","Masjid-e-Taqwa","Mosque","Worship Area","Peace, Ablution Area, Security etc.","IMAGE-PATH"),
+("KL-31","NH-12","Ibrar Cash & Carry","Mart","Grocery Store","All grocery items available","IMAGE-PATH");
