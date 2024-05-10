@@ -1,10 +1,7 @@
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -96,36 +93,34 @@ public class SignUp extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(null,"passwords do not match");
             
         }
-        else{
+        
+        else {
             try (Connection connection = getConnection()) {
-            if (connection != null) {
-                
-                String query = "INSERT INTO users VALUES('"+inputUsername+"','"+inputPassword+"','"+ inputPhone+"')";
-                try (Statement statement = connection.createStatement();
-                     ResultSet resultSet = statement.executeQuery(query)) {
-                    // Process the ResultSet
-                    while (resultSet.next()) {
-                        //Schools_Campus_code = resultSet.getString("Schools_Campus_code");
-                        
-                        
-                        
-                    }
-                } catch (SQLException e) {
-                    System.err.println("Error executing query: " + e.getMessage());
-                }
-                
+                if (connection != null) {
+                    String query = "INSERT INTO users VALUES(?, ?, ?)";
+                    try (PreparedStatement statement = connection.prepareStatement(query)) {
+                        statement.setString(1, inputUsername);
+                        statement.setString(2, inputPassword);
+                        statement.setString(3, inputPhone);
+                        statement.executeUpdate();
+
+            } catch (SQLException e) {
+              System.err.println("Error executing query: " + e.getMessage());
             }
-        } catch (SQLException e) {
-            System.err.println("Error connecting to the database: " + e.getMessage());
         }
-        javax.swing.JOptionPane.showMessageDialog(null,"Successful account creation!");
-        java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            new Login_form().setVisible(true);
-        }
-    });
-        dispose();
+    } catch (SQLException e) {
+    System.err.println("Error connecting to the database: " + e.getMessage());
+  }
+    javax.swing.JOptionPane.showMessageDialog(null,"Successful account creation!");
+    java.awt.EventQueue.invokeLater(new Runnable() {
+    public void run() {
+        new Login_form().setVisible(true);
     }
+    });
+    dispose();
+}
+        
+    
         
        
      
@@ -244,7 +239,12 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login_form().setVisible(true);
+            }
+        });
+        dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
