@@ -13,7 +13,6 @@ SmartCampusDisplay$39.class
 SmartCampusDisplay$49.class
 SmartCampusDisplay$59.class
 SignUp$2.class
-FoodSpots$1.class
 Forgot_Password$4.class
 MyButton$1.class
 SmartCampusDisplay$19.class
@@ -40,7 +39,6 @@ SmartCampusDisplay$24.class
 SmartCampusDisplay$34.class
 SmartCampusDisplay$64.class
 SmartCampusDisplay$74.class
-SignUp$7.class
 SmartCampusDisplay$11.class
 Forgot_Password$3.class
 SmartCampusDisplay$57.class
@@ -63,7 +61,6 @@ FoodSpots.class
 Login_form$4.class
 SmartCampusDisplay$58.class
 Login_form.class
-database_check.class
 SmartCampusDisplay$63.class
 SmartCampusDisplay$23.class
 SmartCampusDisplay$72.class
@@ -78,9 +75,7 @@ SmartCampusDisplay$52.class
 SmartCampusDisplay$62.class
 SignUp.class
 SmartCampusDisplay$25.class
-recreational_Spot$1.class
 SmartCampusDisplay$2.class
-hostels$1.class
 SmartCampusDisplay$65.class
 SmartCampusDisplay$45.class
 Login_form$6.class
@@ -107,7 +102,6 @@ SmartCampusDisplay$6.class
 SmartCampusDisplay$67.class
 SmartCampusDisplay$77.class
 Forgot_Password$6.class
-Forgot_Password$7.class
 SmartCampusDisplay$7.class
 SmartCampusDisplay$20.class
 SmartCampusDisplay$71.class
@@ -115,9 +109,7 @@ Login_form$1.class
 School.class
 SmartCampusDisplay$15.class
 SmartCampusDisplay$55.class
-Campuses_form$1.class
 SmartCampusDisplay$38.class
 SmartCampusDisplay$60.class
 SmartCampusDisplay$66.class
-SmartCampusDisplay$78.class
 SmartCampusDisplay$43.class
