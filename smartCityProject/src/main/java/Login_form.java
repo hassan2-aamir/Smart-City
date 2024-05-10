@@ -76,11 +76,12 @@ public class Login_form extends javax.swing.JFrame {
         else{
             java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SmartCampusDisplay().setVisible(true);
+                new SmartCampusDisplay(inputUsername).setVisible(true);
             }
         });
+            dispose();
         }
-        dispose();
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

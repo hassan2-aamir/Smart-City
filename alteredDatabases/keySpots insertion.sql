@@ -32,3 +32,5 @@ values
 ("KL-30","NH-12","Masjid-e-Taqwa","Mosque","Worship Area","Peace, Ablution Area, Security etc.","IMAGE-PATH"),
 ("KL-31","NH-12","Ibrar Cash & Carry","Mart","Grocery Store","All grocery items available","IMAGE-PATH"),
 ("KL-32","NH-12","Gate-10","University Gate","Enterance and exit","Security, Entry on enterance etc.","IMAGE-PATH");
+
+

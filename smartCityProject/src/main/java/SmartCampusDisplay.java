@@ -7,11 +7,7 @@
  *
  * @author hp
  */
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import javax.swing.*;
 
 interface getInformation {
@@ -380,9 +376,12 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     /**
      * Creates new form SmartCityDisplay
      */
-    public SmartCampusDisplay() {
+    private String username;
+    public SmartCampusDisplay(String username) {
+        this.username = username;
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         initComponents();
+        
     }
 
     /**
@@ -482,7 +481,6 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton20 = new MyButton();
         myButton21 = new MyButton();
         myButton22 = new MyButton();
-        myButton23 = new MyButton();
         myButton24 = new MyButton();
         myButton25 = new MyButton();
         myButton26 = new MyButton();
@@ -547,6 +545,12 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton85 = new MyButton();
         myButton86 = new MyButton();
         myButton87 = new MyButton();
+        myButton54 = new MyButton();
+        myButton88 = new MyButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 0), new java.awt.Dimension(50, 0), new java.awt.Dimension(50, 32767));
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -568,6 +572,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton5.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton5.setBorderPainted(false);
         myButton5.setRadius(20);
+        myButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 30, 30));
 
         myButton6.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -583,6 +592,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton7.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton7.setBorderPainted(false);
         myButton7.setRadius(20);
+        myButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton7ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 30, 30));
 
         myButton8.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -598,6 +612,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton10.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton10.setBorderPainted(false);
         myButton10.setRadius(20);
+        myButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton10ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, 30, 30));
 
         myButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -613,16 +632,31 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton4.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton4.setBorderPainted(false);
         myButton4.setRadius(20);
+        myButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 440, 30, 30));
 
         myButton11.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton11.setBorderPainted(false);
         myButton11.setRadius(20);
+        myButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton11ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 30, 30));
 
         myButton12.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton12.setBorderPainted(false);
         myButton12.setRadius(20);
+        myButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton12ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 320, 30, 30));
 
         myButton13.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -698,7 +732,12 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton20.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton20.setBorderPainted(false);
         myButton20.setRadius(20);
-        getContentPane().add(myButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 20, 20));
+        myButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton20ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 20, 20));
 
         myButton21.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton21.setBorderPainted(false);
@@ -719,11 +758,6 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
             }
         });
         getContentPane().add(myButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 30, 30));
-
-        myButton23.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
-        myButton23.setBorderPainted(false);
-        myButton23.setRadius(20);
-        getContentPane().add(myButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 30, 30));
 
         myButton24.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton24.setBorderPainted(false);
@@ -838,6 +872,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton35.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton35.setBorderPainted(false);
         myButton35.setRadius(20);
+        myButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton35ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 30, 30));
 
         myButton36.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -863,6 +902,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton38.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton38.setBorderPainted(false);
         myButton38.setRadius(20);
+        myButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton38ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 30, 30));
 
         myButton39.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -978,6 +1022,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton50.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton50.setBorderPainted(false);
         myButton50.setRadius(20);
+        myButton50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton50ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 30));
 
         myButton51.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -1103,6 +1152,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton68.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton68.setBorderPainted(false);
         myButton68.setRadius(20);
+        myButton68.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton68ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton68, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 340, 30, 30));
 
         myButton69.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -1138,6 +1192,11 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         myButton71.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
         myButton71.setBorderPainted(false);
         myButton71.setRadius(20);
+        myButton71.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton71ActionPerformed(evt);
+            }
+        });
         getContentPane().add(myButton71, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 190, 30, 30));
 
         myButton59.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
@@ -1340,6 +1399,44 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         });
         getContentPane().add(myButton87, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 30, 30));
 
+        myButton54.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        myButton54.setBorderPainted(false);
+        myButton54.setRadius(20);
+        myButton54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton54ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 20, 20));
+
+        myButton88.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        myButton88.setBorderPainted(false);
+        myButton88.setRadius(20);
+        myButton88.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myButton88ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(myButton88, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 20, 20));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 50, -1));
+        getContentPane().add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sign out", "deactivate account" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 10, 170, 30));
+
+        jButton1.setText("Ok");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 50, -1, -1));
+
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Screenshot 2024-04-21 183638.png")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -230, 1920, 1080));
 
@@ -1351,7 +1448,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     }//GEN-LAST:event_myButton6ActionPerformed
     
     private void myButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton61ActionPerformed
-        // TODO add your handling code here:
+        clickRecreationalSpot("RS-24");// TODO add your handling code here:
     }//GEN-LAST:event_myButton61ActionPerformed
 
     private void myButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton62ActionPerformed
@@ -1635,14 +1732,116 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private void myButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton36ActionPerformed
         clickKeyLocation("KL-18");// TODO add your handling code here:
     }//GEN-LAST:event_myButton36ActionPerformed
+
+    private void myButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton20ActionPerformed
+        clickFoodSpot("FS-12");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton20ActionPerformed
+
+    private void myButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton54ActionPerformed
+        clickRecreationalSpot("RS-25");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton54ActionPerformed
+
+    private void myButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton71ActionPerformed
+        clickKeyLocation("KL-19");
+    }//GEN-LAST:event_myButton71ActionPerformed
+
+    private void myButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton50ActionPerformed
+        clickKeyLocation("KL-20");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton50ActionPerformed
+
+    private void myButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton7ActionPerformed
+        clickKeyLocation("KL-22");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton7ActionPerformed
+
+    private void myButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton5ActionPerformed
+        clickKeyLocation("KL-23");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton5ActionPerformed
+
+    private void myButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton38ActionPerformed
+        clickKeyLocation("KL-24");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton38ActionPerformed
+
+    private void myButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton35ActionPerformed
+        clickKeyLocation("KL-26");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton35ActionPerformed
+
+    private void myButton88ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton88ActionPerformed
+        clickKeyLocation("KL-27");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton88ActionPerformed
+
+    private void myButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton68ActionPerformed
+        clickKeyLocation("KL-28");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton68ActionPerformed
+
+    private void myButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton10ActionPerformed
+        clickKeyLocation("KL-29");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton10ActionPerformed
+
+    private void myButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton12ActionPerformed
+        clickKeyLocation("KL-29");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton12ActionPerformed
+
+    private void myButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton11ActionPerformed
+        clickKeyLocation("KL-29");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton11ActionPerformed
+
+    private void myButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton4ActionPerformed
+        clickKeyLocation("KL-29");// TODO add your handling code here:
+    }//GEN-LAST:event_myButton4ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(jComboBox1.getSelectedItem().equals("deactivate account")){
+            int dialogResult = javax.swing.JOptionPane.showConfirmDialog(null,"Are you sure you want to delete your account?");
+            if (dialogResult==javax.swing.JOptionPane.YES_OPTION){
+                try (Connection connection = Actions.getConnection()) {
+                if (connection != null) {
+                    String query = "DELETE FROM users where username = ?";
+                    try (PreparedStatement statement = connection.prepareStatement(query)) {
+                        statement.setString(1, username);
+                        statement.executeUpdate();
+
+                } catch (SQLException e) {
+                    System.err.println("Error executing query: " + e.getMessage());
+                }
+                }
+            } catch (SQLException e) {
+                System.err.println("Error connecting to the database: " + e.getMessage());
+            }
+            javax.swing.JOptionPane.showMessageDialog(null, "Account deleted :C");
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login_form().setVisible(true);
+            }
+            });
+            dispose();
+        }
+        
+        
+    }
+        else if(jComboBox1.getSelectedItem().equals("sign out")) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login_form().setVisible(true);
+            }
+        });
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
     
-    
+    }
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1660,7 +1859,6 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private MyButton myButton20;
     private MyButton myButton21;
     private MyButton myButton22;
-    private MyButton myButton23;
     private MyButton myButton24;
     private MyButton myButton25;
     private MyButton myButton26;
@@ -1694,6 +1892,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private MyButton myButton51;
     private MyButton myButton52;
     private MyButton myButton53;
+    private MyButton myButton54;
     private MyButton myButton55;
     private MyButton myButton56;
     private MyButton myButton57;
@@ -1730,6 +1929,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
     private MyButton myButton85;
     private MyButton myButton86;
     private MyButton myButton87;
+    private MyButton myButton88;
     private MyButton myButton9;
     // End of variables declaration//GEN-END:variables
 }
