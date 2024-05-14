@@ -25,8 +25,8 @@ CREATE TABLE Schools (
 CREATE TABLE KeyLocations (
     KeyLocation_ID VARCHAR(10),
     KeyLocation_Campus_code VARCHAR(10) NOT NULL,
-    KeyLocation_name VARCHAR(20) NOT NULL,
-    KeyLocation_type VARCHAR(20),
+    KeyLocation_name VARCHAR(50) NOT NULL,
+    KeyLocation_type VARCHAR(50),
     Description TEXT, 
     Facilities TEXT,
     Image_path VARCHAR(500) NOT NULL, 
@@ -52,13 +52,13 @@ CREATE TABLE Hostels (
 	Hostel_ID VARCHAR(20),
     Hostel_Campus_code VARCHAR(10) NOT NULL,
     Hostel_name VARCHAR(20) NOT NULL,
+	Rating DECIMAL(2,1),
     Hostel_type VARCHAR(10),
     Description TEXT, 
     Facilities TEXT, 
     Image_path VARCHAR(500) NOT NULL, 
-    Rating DECIMAL(2,1), 
+	closing_time VARCHAR(10),
     Opening_time VARCHAR(10),
-    closing_time VARCHAR(10),
     CONSTRAINT Hostel_ID_PK PRIMARY KEY (Hostel_ID)
 );
 
@@ -68,7 +68,7 @@ CREATE TABLE FoodSpots (
     FoodSpot_Campus_code VARCHAR(10) NOT NULL,
     FoodSpot_name VARCHAR(20) NOT NULL,
     Rating DECIMAL(2,1), 
-    CuisineType VARCHAR(10),
+    CuisineType VARCHAR(50),
     Description TEXT, 
     Facilities TEXT, 
     Image_path VARCHAR(500) NOT NULL, 
