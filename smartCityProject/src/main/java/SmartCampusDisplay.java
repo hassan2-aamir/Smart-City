@@ -9,6 +9,10 @@
  */
 import java.sql.*;
 import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import java.awt.*;
 
 interface getInformation {
     String getName();
@@ -383,7 +387,8 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         initComponents();
         
     }
-
+    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -454,7 +459,8 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         KeyLocation thiskeyLocation = Actions.keyLocationAction(id);
         openKeyLocationForm(thiskeyLocation.getImagePath(),thiskeyLocation.getName(),thiskeyLocation.getDescription(),thiskeyLocation.getFacilities(),thiskeyLocation.getKeyLocationType());
     }
-
+    
+     
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1438,6 +1444,7 @@ public class SmartCampusDisplay extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 50, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Screenshot 2024-04-21 183638.png")); // NOI18N
+        jLabel3.setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -230, 1920, 1080));
 
         pack();
