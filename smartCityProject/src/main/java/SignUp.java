@@ -89,6 +89,10 @@ public class SignUp extends javax.swing.JFrame {
         else if (!(inputPhone.substring(0,2).equals("03"))){
             javax.swing.JOptionPane.showMessageDialog(null,"Phone number not valid");
         }
+        else if (inputPassword.equals("")){
+            javax.swing.JOptionPane.showMessageDialog(null,"passwords can not be empty");
+            
+        }
         else if (!(inputPassword.equals(inputConfirmPassword))){
             javax.swing.JOptionPane.showMessageDialog(null,"passwords do not match");
             
