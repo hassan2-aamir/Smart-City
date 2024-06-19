@@ -21,15 +21,15 @@ This project is designed to showcase various landmarks and spots within a campus
 ## Setup Instructions
 ### Database Setup:
 
-1- Create a MySQL database named smartcity.
-2- Import the provided SQL script (smartcity.sql) to create the necessary tables and populate them with sample data.
+1. Create a MySQL database named smartcity.
+2. Import the provided SQL script (smartcity.sql) to create the necessary tables and populate them with sample data.
 ## IDE Setup:
 
-Import the Java project into your preferred IDE (Eclipse, IntelliJ IDEA, etc.).
+1. Import the Java project into your preferred IDE (Eclipse, IntelliJ IDEA, etc.).
 Library Dependencies:
 
-Ensure the MySQL Connector/J library is added to your project build path.
+2. Ensure the MySQL Connector/J library is added to your project build path.
 ## Configuration:
 
-Modify the Actions.java file:
-Update the JDBC_URL, USERNAME,
+- Modify the Actions.java file:
+- Update the JDBC_URL, USERNAME,
