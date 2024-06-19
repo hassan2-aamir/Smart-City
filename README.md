@@ -37,52 +37,7 @@ Library Dependencies:
 - Modify the Actions.java file:
 - Update the JDBC_URL, USERNAME
 
-To create a README file for your GitHub project based on the provided Java code, follow these steps. This README will outline the purpose of the project, how to set it up, and how to use it.
 
-Project Name
-Provide a concise title or description for your project.
-
-Table of Contents
-Introduction
-Features
-Technologies Used
-Setup Instructions
-Usage
-Examples
-Contributing
-License
-Introduction
-Briefly describe what your project does and its objectives. Mention its scope and any key features.
-
-Features
-List the main features or functionalities that your project offers. For example:
-
-Display information about schools, hostels, recreational spots, food spots, and key locations.
-Connects to a MySQL database to fetch data dynamically.
-Technologies Used
-Outline the key technologies and libraries used in your project. For example:
-
-Java
-JDBC for MySQL connectivity
-Swing for GUI components
-Setup Instructions
-Provide step-by-step instructions on how to set up your project locally. Include prerequisites and installation steps. For example:
-
-Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
-Set up MySQL database:
-
-Create a MySQL database named smartcity.
-Import the schema from smartcity.sql located in the repository.
-Configure database credentials:
-
-Open the project in your preferred IDE.
-Navigate to Actions.java.
-Modify the JDBC_URL, USERNAME, and PASSWORD constants according to your MySQL setup.
 ##Usage
 Explain how to use your application. Provide examples or instructions for interacting with different features. For example:
 
@@ -96,6 +51,7 @@ Explain how to use your application. Provide examples or instructions for intera
 - Displays these details in a separate window for user 
 
 # Images
+
 ## Signup Page
 ![Image Alt text]()
 ## Login Page
