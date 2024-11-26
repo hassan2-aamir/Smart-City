@@ -50,13 +50,3 @@ Explain how to use your application. Provide examples or instructions for intera
 - Fetches hostel details such as type, rating, and curfew timings.
 - Displays these details in a separate window for user 
 
-# Images
-
-## Signup Page
-![Image Alt text]()
-## Login Page
-![Image Alt text]()
-## Display Page
-![Image ALt text]()
-## Information Display Page
-![Image Alt text]()
